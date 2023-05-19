@@ -24,10 +24,6 @@ jobs:
       - name: Build the app
         run: npm run build --prefix app
 
-
-      - name: Installing aws
-        run: pip3 install awscli
-
       - name: Upload to S3
         run: |
-          aws --region $REGION s3 cp --recursive ./app/build/ s3://portfolio_react_bucket/
+          aws --region 'us-east-1' s3 cp --recursive ./app/build/ s3://portfolio_react_bucket/
