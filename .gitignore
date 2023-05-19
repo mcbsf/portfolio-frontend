@@ -33,4 +33,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-sensitive_data/*
+deploy/prod/sensitive_data/*
