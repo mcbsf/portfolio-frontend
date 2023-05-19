@@ -1,5 +1,6 @@
 locals {
     s3_origin_id = "S3-origin-react-app"
+    expression = "${var.title != "" ? var.title : var.default}"
 }
 
 resource "aws_cloudfront_origin_access_identity" "oai" {
