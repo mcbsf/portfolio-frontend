@@ -23,20 +23,28 @@ const Portfolio = () => {
 
     return (
         <div className="portfolio">
-            <header className="portfolio-header">
+            <div className='header-like'>
+                <header className="portfolio-header">
+                    
+                    <div className="portfolio-header-right">
+                        <a href="#projects">Projects</a>
+                        <a href="#professional-experience">Professional Experience</a>
+                        <a href="#academic-experience">Academic Experience</a>
+                        <a href="#scientific-research">Scientific Research</a>
+                        <a href="#volunteering">Volunteering</a>
+                    </div>
+                </header>
+            </div>
+            <div class='overlay-content'>
+                <h1>Hello, I'm Mario!</h1>
+                <div class='text'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
                 <div className="portfolio-header-left">
-                    <SocialIcon url="https://www.linkedin.com/in/mario-cardoso-95393b175/"/>
-                    <SocialIcon url="mailto:mariocbsf@gmail.com" bgColor="red" fgColor="white"/>
+                        <SocialIcon url="https://www.linkedin.com/in/mario-cardoso-95393b175/" fgColor="white" />
+                        <SocialIcon url="mailto:mariocbsf@gmail.com" bgColor="red" fgColor="white" />
                 </div>
-                <div className="portfolio-header-right">
-                    <a href="#projects">Projects</a>
-                    <a href="#professional-experience">Professional Experience</a>
-                    <a href="#academic-experience">Academic Experience</a>
-                    <a href="#scientific-research">Scientific Research</a>
-                    <a href="#volunteering">Volunteering</a>
-                </div>
-            </header>
-            
+            </div>
             <section id="professional-experience" className="portfolio-section">
                 <h2>Professional Experience</h2>
                 {/* Add your professional experience content here */}
