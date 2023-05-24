@@ -2,10 +2,11 @@
 
 .portfolio {
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 0px 20px;
 }
 
 .header-like {
+    top: 0px;
     vertical-align: top;
     background: linear-gradient(to right, #a724db, #314ff8);
     padding: 20px;

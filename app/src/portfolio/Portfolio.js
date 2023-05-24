@@ -38,7 +38,7 @@ const Portfolio = () => {
             <div class='overlay-content'>
                 <h1>Hello, I'm Mario!</h1>
                 <div class='text'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Some intro about me
                 </div>
                 <div className="portfolio-header-left">
                         <SocialIcon url="https://www.linkedin.com/in/mario-cardoso-95393b175/" fgColor="white" />
