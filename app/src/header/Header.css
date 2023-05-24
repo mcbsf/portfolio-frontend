@@ -1,11 +1,10 @@
 
 .header-like {
     top: 0px;
-    vertical-align: top;
-    background: linear-gradient(to right, #a724db, #314ff8);
+    background: linear-gradient(to right, #a724db, #3181f8);
     padding: 20px;
     border-radius: 10px;
-    height: 30vh;
+    height: 40vh;
 
 }
 
