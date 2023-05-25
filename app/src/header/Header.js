@@ -1,6 +1,6 @@
 
 import './Header.css';
-const Header_Like = () => {
+const HeaderLike = () => {
 
     return( 
     <div className='header-like'>
@@ -18,4 +18,4 @@ const Header_Like = () => {
     );
 };
 
-export default Header_Like;
+export default HeaderLike;
