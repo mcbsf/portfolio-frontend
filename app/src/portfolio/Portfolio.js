@@ -1,7 +1,7 @@
 import React from 'react';
 import './Portfolio.css';
 import { SocialIcon } from 'react-social-icons';
-import ProfilePhoto from '../assets/profile.jpg'
+import ProfilePhoto from '../assets/profile.png'
 const Portfolio = () => {
     const projects = [
         {
@@ -30,10 +30,10 @@ const Portfolio = () => {
                 </div>
                 <div className='profile-data'>
                     <h1>Hello, I'm Mario!</h1>
-                    <div class='text'>
-                        Some intro about me
+                    <div className='text'>
+                        Senior Software Engineer with a passion for leveraging my skills and experience to contribute to the growth and success of dynamic organizations. With 5+ years of experience in engineering, I bring a strong understanding of software development methodologies and best practices.
                     </div>
-                    <div>
+                    <div className='icons'>
                         <SocialIcon className='icon' url="https://www.linkedin.com/in/mario-cardoso-95393b175/" fgColor="white" />
                         <SocialIcon className='icon' url="mailto:mariocbsf@gmail.com" bgColor="red" fgColor="white" />
                         <SocialIcon className='icon' url="https://www.github.com/mcbsf" bgColor="black" fgColor="white" />
