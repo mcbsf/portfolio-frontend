@@ -2,7 +2,7 @@ import React from 'react';
 import './Portfolio.css';
 import { SocialIcon } from 'react-social-icons';
 import ProfilePhoto from '../assets/profile.png'
-const Portfolio = () => {
+function Portfolio () {
     const projects = [
         {
             title: 'Project 1',

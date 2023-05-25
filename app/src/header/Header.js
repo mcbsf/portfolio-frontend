@@ -1,6 +1,6 @@
 
 import './Header.css';
-const HeaderLike = () => {
+function HeaderLike () {
 
     return( 
     <div className='header-like'>
