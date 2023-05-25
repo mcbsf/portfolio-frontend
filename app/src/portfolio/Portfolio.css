@@ -8,27 +8,46 @@
 
 .overlay-content {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     width: 70%;
     text-align: center;
-    display: grid;
     margin-left: 15%;
-    top: 35%;
+    top: 25%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #ffffff;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-
+.icon {
+    margin: 10px 10px 10px 10px;
+}
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
 }
+.profile-photo {
 
+    flex: 1;
+    flex-basis: 30%;
+    float: left;
+}
+
+.profile-photo img {
+
+    max-width:100%;
+    max-height:100%;
+}
+
+.profile-data {
+
+    flex: 1;
+    flex-basis: 60%;
+    float: right;
+}
 .project {
     display: flex;
     flex-direction: column;
@@ -99,5 +118,5 @@
 }
 
 #professional-experience{
-    margin-top:200px
+    margin-top:450px
 }

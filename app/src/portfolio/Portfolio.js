@@ -1,6 +1,7 @@
 import React from 'react';
 import './Portfolio.css';
 import { SocialIcon } from 'react-social-icons';
+import ProfilePhoto from '../assets/profile.jpg'
 const Portfolio = () => {
     const projects = [
         {
@@ -24,14 +25,21 @@ const Portfolio = () => {
         <div className="portfolio">
 
             <div class='overlay-content'>
-                <h1>Hello, I'm Mario!</h1>
-                <div class='text'>
-                    Some intro about me
+                <div className='profile-photo'>
+                    <img src={ProfilePhoto} alt="Some Title" />
                 </div>
-                <div className="portfolio-header-left">
-                        <SocialIcon url="https://www.linkedin.com/in/mario-cardoso-95393b175/" fgColor="white" />
-                        <SocialIcon url="mailto:mariocbsf@gmail.com" bgColor="red" fgColor="white" />
+                <div className='profile-data'>
+                    <h1>Hello, I'm Mario!</h1>
+                    <div class='text'>
+                        Some intro about me
+                    </div>
+                    <div>
+                        <SocialIcon className='icon' url="https://www.linkedin.com/in/mario-cardoso-95393b175/" fgColor="white" />
+                        <SocialIcon className='icon' url="mailto:mariocbsf@gmail.com" bgColor="red" fgColor="white" />
+                        <SocialIcon className='icon' url="https://www.github.com/mcbsf" bgColor="black" fgColor="white" />
+                    </div>
                 </div>
+                
             </div>
             <section id="professional-experience" className="portfolio-section">
                 <h2>Professional Experience</h2>
