@@ -39,48 +39,51 @@ const Portfolio = () => {
                         <SocialIcon className='icon' url="https://www.github.com/mcbsf" bgColor="black" fgColor="white" />
                     </div>
                 </div>
-                
+
             </div>
-            <section id="professional-experience" className="portfolio-section">
-                <h2>Professional Experience</h2>
-                {/* Add your professional experience content here */}
-            </section>
-            <section id="academic-experience" className="portfolio-section">
-                <h2>Academic Experience</h2>
-                {/* Add your academic experience content here */}
-            </section>
-            <section id="scientific-research" className="portfolio-section">
-                <h2>Scientific Research</h2>
-                {/* Add your scientific research content here */}
-            </section>
-            <section id="projects" className="portfolio-section">
-                <h2>Projects</h2>
-                <div className="projects">
-                    {projects.map((project, index) => (
-                        <div className="project" key={index}>
-                            <div className="project-image">
-                                <img src={project.imageUrl} alt={project.title} />
-                            </div>
-                            <div className="project-details">
-                                <h3>{project.title}</h3>
-                                <p>{project.description}</p>
-                                <div className="project-links">
-                                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                        Live Demo
-                                    </a>
-                                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                        GitHub
-                                    </a>
+            <div className='experiences'>
+                <section id="professional-experience" className="portfolio-section">
+                    <h2>Professional Experience</h2>
+                    {/* Add your professional experience content here */}
+                </section>
+                <section id="academic-experience" className="portfolio-section">
+                    <h2>Academic Experience</h2>
+                    {/* Add your academic experience content here */}
+                </section>
+                <section id="scientific-research" className="portfolio-section">
+                    <h2>Scientific Research</h2>
+                    {/* Add your scientific research content here */}
+                </section>
+                <section id="projects" className="portfolio-section">
+                    <h2>Projects</h2>
+                    <div className="projects">
+                        {projects.map((project, index) => (
+                            <div className="project" key={index}>
+                                <div className="project-image">
+                                    <img src={project.imageUrl} alt={project.title} />
+                                </div>
+                                <div className="project-details">
+                                    <h3>{project.title}</h3>
+                                    <p>{project.description}</p>
+                                    <div className="project-links">
+                                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                            Live Demo
+                                        </a>
+                                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                            GitHub
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-            <section id="volunteering" className="portfolio-section">
-                <h2>Volunteering</h2>
-                {/* Add your volunteering content here */}
-            </section>
+                        ))}
+                    </div>
+                </section>
+                <section id="volunteering" className="portfolio-section">
+                    <h2>Volunteering</h2>
+                    {/* Add your volunteering content here */}
+                </section>
+            </div>
+
         </div>
     );
 };
