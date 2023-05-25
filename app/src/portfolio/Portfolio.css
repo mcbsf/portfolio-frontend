@@ -118,6 +118,7 @@
 
 .portfolio-section {
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .portfolio-section h2 {
@@ -144,4 +145,5 @@
     top: 60%;
     left:50%;
     transform: translateX(-50%);
+    width: 90%;
 }
