@@ -1,9 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Button, Row } from 'antd';
-import { EyeOutlined } from '@ant-design/icons'
 import './ProfessionalExperiences.css';
 function ProfessionalExperiences() {
-    const myRef = useRef(null)
     const professionalExperiences = [
         {
             company: "Creditas",
