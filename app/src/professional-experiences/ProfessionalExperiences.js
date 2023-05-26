@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Button } from 'antd';
+import { Button, Row } from 'antd';
 import { EyeOutlined } from '@ant-design/icons'
 import './ProfessionalExperiences.css';
 function ProfessionalExperiences() {
@@ -128,6 +128,7 @@ function ProfessionalExperiences() {
         <div>
             <h2>Professional Experience</h2>
             {professionalExperiences.map((experience, index) => (
+
                 <div className="experience">
                     <h3>{experience.company} - {experience.position}
                         <Button
@@ -143,16 +144,20 @@ function ProfessionalExperiences() {
                         </Button>
                     </h3>
                     <p>{experience.duration}</p>
+
                     {hide[index] ?
                         <div className='professional-exp-details' ref={(ref) => (detailsRefs.current[index] = ref)}>
-
+                            <Row>
+                                <div className='exp-title'>
+                                    <h3>{experience.company} - {experience.position}</h3>
+                                </div>
+                            
+                            </Row>
                             <div className='hardskills'>
                                 HardSkills
                                 <ul>
                                     {experience.hardSkills.map((hardskill, indexHardskills) => (
-
                                         <li> {hardskill}</li>
-
                                     ))}
                                 </ul>
                             </div>
@@ -161,7 +166,7 @@ function ProfessionalExperiences() {
                                 type="primary"
                                 shape="circle"
                                 size="small"
-                                className='expand-btn'
+                                className='collapse-btn'
                                 onClick={() => expand(index)}
                             >
                                 x

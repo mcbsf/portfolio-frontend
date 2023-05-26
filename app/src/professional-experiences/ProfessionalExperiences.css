@@ -1,6 +1,13 @@
 .expand-btn{
     margin-left: 10px; 
 }
+
+.collapse-btn{
+    margin-top: 70px;
+    margin-right: 70px; 
+}
+
+
 .experience{
     margin-top: 40px; 
     
@@ -32,10 +39,18 @@
     text-align: center;
     display: flex;
     flex-direction: row;
-    background-color: #ffc6ff;
+    background: linear-gradient(to right, #ad30df, #4484e4);
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.professional-exp-details h3{
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translateX(50%);
+    
 }
 
 .hardskills{
@@ -59,3 +74,7 @@
     justify-content: left;
     align-items: center;
 }
+
+.blurred {
+    filter: blur(5px); /* Apply blur effect */
+  }
