@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Button, Row } from 'antd';
+import { Button, Row, List } from 'antd';
 import './ProfessionalExperiences.css';
 function ProfessionalExperiences() {
     const professionalExperiences = [
@@ -8,17 +8,17 @@ function ProfessionalExperiences() {
             position: "Senior Software Engineer",
             duration: "AUG 2022 - PRESENT",
             hardSkills: [
-                "python(flask, pandas, pytest)",
-                "javascript(react)",
-                "terraform",
-                "aws",
-                "gcp",
-                "circleci",
-                "postgres",
-                "sqs",
-                "metabase",
-                "kibana",
-                "prometheus"
+                { 'title': 'python', 'description': 'flask, pandas, pytest' },
+                { 'title': 'javascript', 'description': 'react' },
+                { 'title': 'terraform', 'description': '' },
+                { 'title': 'aws', 'description': '' },
+                { 'title': 'gcp', 'description': '' },
+                { 'title': 'circleci', 'description': '' },
+                { 'title': 'postgres', 'description': '' },
+                { 'title': 'sqs', 'description': '' },
+                { 'title': 'metabase', 'description': '' },
+                { 'title': 'kibana', 'description': '' },
+                { 'title': 'prometheus', 'description': '' }
             ],
             responsibilities: [
                 "Stakeholders management to create an efficient backlog",
@@ -31,17 +31,54 @@ function ProfessionalExperiences() {
             position: "Senior Software Engineer",
             duration: "JAN 2022 - AUG 2022",
             hardSkills: [
-                "python(fastapi, pandas, pytest, pyspark)",
-                "javascript(react), C#(.NET)",
-                "cloudformation",
-                "aws",
-                "azure devops",
-                "jenkins",
-                "postgres",
-                "dynamo",
-                "sqs",
-                "kafka",
-                "athena",
+                {
+                    'title': "python(fastapi, pandas, pytest, pyspark)",
+                    'description': ''
+                },
+                {
+                    'title': "javascript(react)",
+                    'description': ''
+                },
+                {
+                    'title': "C#(.NET)",
+                    'description': ''
+                },
+                {
+                    'title': "cloudformation",
+                    'description': ''
+                },
+                {
+                    'title': "aws",
+                    'description': ''
+                },
+                {
+                    'title': "azure devops",
+                    'description': ''
+                },
+                {
+                    'title': "jenkins",
+                    'description': ''
+                },
+                {
+                    'title': "postgres",
+                    'description': ''
+                },
+                {
+                    'title': "dynamo",
+                    'description': ''
+                },
+                {
+                    'title': "sqs",
+                    'description': ''
+                },
+                {
+                    'title': "kafka",
+                    'description': ''
+                },
+                {
+                    'title': "athena",
+                    'description': ''
+                },
                 "glue",
                 "cloudwatch"
             ],
@@ -71,11 +108,12 @@ function ProfessionalExperiences() {
             position: "Software Engineer",
             duration: "JUN 2019 - JAN 2021",
             hardSkills: [
-                "python(pandas)",
-                "php(laravel)",
-                "javascript(vuejs)",
-                "digital ocean",
-                "postgres"
+                { 'title': 'python', 'description': 'opencv, tornado' },
+                { 'title': 'typescript', 'description': 'angular' },
+                { 'title': 'aws', 'description': '' },
+                { 'title': 'azure devops', 'description': '' },
+                { 'title': 'postgres', 'description': '' },
+                { 'title': 'grey log', 'description': '' }
             ],
             responsibilities: [
                 "Started as a salesman and finished as IT manager in this fintech startup",
@@ -88,9 +126,9 @@ function ProfessionalExperiences() {
             position: "Intern Software Developer",
             duration: "FEB 2019 - JUN 2019",
             hardSkills: [
-                "C#(.NET)",
-                "Power BI",
-                "MongoDB"
+                { 'title': 'C#', 'description': '.NET' },
+                { 'title': 'Power BI', 'description': '' },
+                { 'title': 'MongoDB', 'description': '' }
             ],
             responsibilities: [
                 "Software Developer in software factory to build ERP and CRM for several clients"
@@ -120,7 +158,7 @@ function ProfessionalExperiences() {
                 detailsRef.scrollIntoView({ behavior: 'smooth' });
             }
         }, 10);
-        
+
     };
     return (
         <div>
@@ -144,31 +182,45 @@ function ProfessionalExperiences() {
                     <p>{experience.duration}</p>
 
                     {hide[index] ?
-                        <div className='professional-exp-details' ref={(ref) => (detailsRefs.current[index] = ref)}>
+                        <div>
                             <Row>
                                 <div className='exp-title'>
                                     <h3>{experience.company} - {experience.position}</h3>
                                 </div>
-                            
+
                             </Row>
-                            <div className='hardskills'>
-                                HardSkills
-                                <ul>
-                                    {experience.hardSkills.map((hardskill, indexHardskills) => (
-                                        <li> {hardskill}</li>
-                                    ))}
-                                </ul>
+
+                            <div className='professional-exp-details' ref={(ref) => (detailsRefs.current[index] = ref)}>
+
+                                <div className='hardskills'>
+
+                                        <List
+                                            header={<div>HardSkills</div>}
+                                            itemLayout="horizontal"
+                                            dataSource={experience.hardSkills}
+                                            renderItem={(hardskill, index) => (
+                                                <List.Item>
+                                                    <List.Item.Meta
+
+                                                        title={<div className="hardskill-title" style={{ marginBottom: 0 }}>{hardskill.title}</div>}
+                                                        description={<div className="hardskill-description" style={{ marginLeft: '10px' }}>{hardskill.description}</div>}
+                                                    />
+                                                </List.Item>
+                                            )}
+                                        />
+
+                                </div>
+                                <div className='responsabilities'></div>
+                                <Button
+                                    type="primary"
+                                    shape="circle"
+                                    size="small"
+                                    className='collapse-btn'
+                                    onClick={() => expand(index)}
+                                >
+                                    x
+                                </Button>
                             </div>
-                            <div className='responsabilities'></div>
-                            <Button
-                                type="primary"
-                                shape="circle"
-                                size="small"
-                                className='collapse-btn'
-                                onClick={() => expand(index)}
-                            >
-                                x
-                            </Button>
                         </div>
                         : null}
                 </div>
