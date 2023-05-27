@@ -32,7 +32,12 @@ function Portfolio() {
                 <div className='profile-data'>
                     <h1>Hello, I'm Mario!</h1>
                     <div className='text'>
+                        <p>
                         Senior Software Engineer with a passion for leveraging my skills and experience to contribute to the growth and success of dynamic organizations. With 5+ years of experience in engineering, I bring a strong understanding of software development methodologies and best practices.
+                        <br/>
+                        <br/>
+                        If you liked my portfolio, wait until see my backend capabilities wich are much better.
+                        </p>
                     </div>
                     <div className='icons'>
                         <SocialIcon className='icon' url="https://www.linkedin.com/in/mario-cardoso-95393b175/" fgColor="white" />

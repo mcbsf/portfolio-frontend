@@ -1,17 +1,22 @@
-.expand-btn{
-    margin-left: 10px; 
+.expand-btn {
+    margin-left: 10px;
 }
 
-.collapse-btn{
-    margin-top: 70px;
-    margin-right: 70px; 
+.collapse-btn {
+    position: fixed;
+    top: 0%;
+    left: 80%;
+    z-index: 4;
+    margin-top: 30px;
+    margin-right: 50px;
 }
 
 
-.experience{
-    margin-top: 40px; 
-    
+.experience {
+    margin-top: 40px;
+
 }
+
 .experience p {
     color: gray;
     align-items: top;
@@ -27,16 +32,17 @@
     transform: translateX(30%);
 }
 
-.professional-exp-details{
+.professional-exp-details {
 
     z-index: 3;
     border-radius: 10% !important;
     position: fixed;
     top: 0%;
-    height: 70vh;
+    height: auto;
     width: 80%;
     left: 10%;
     text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     background: linear-gradient(to right, #ad30df, #4484e4);
@@ -44,48 +50,64 @@
     overflow: hidden;
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
     justify-content: space-around;
+    align-items: center;
 }
 .exp-title{
+    margin-top: 0;
+    position: relative;
+}
+.exp-title  h3{
     z-index: 4;
     position: fixed;
     top: 0%;
-
-    left:10%;
-    transform: translateX(-30%);
-
-    height: 2vh;
     width: 80%;
-    text-align: center;
+    align-items: center;
+    left:50%;
+    
+    transform: translateX(-28%);
+    font-size: 5vh;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #cecece,#d1d1d1);
+    text-shadow: 2px 2px 4px rgba(43, 43, 43, 0.3);
 }
-
-.professional-exp-details h3{
+.professional-exp-details h3 {
     position: relative;
     width: 100%;
     left: 50%;
     transform: translateX(50%);
-    
+
 }
 
-.hardskills{
-    margin-top: 10%;
+.hardskills {
     width: 100%;
     flex: 1;
     flex-basis: 30%;
     display: inline !important;
     justify-content: top;
     align-items: center;
-
-    left:-10%;
+    
+    padding: 0px 0px 0px 0px;
+    left: -10%;
 }
+
 .hardskill-title {
+
     font-weight: bold;
+    font-size: 1.6vh;
+    margin-bottom: 0;
+
 }
 
 .hardskill-description {
     display: inline-block;
-    margin-left: 10px; /* Adjust this value as needed */
+    margin-left: 10px;
+    color: rgb(173, 173, 173);
+    font-size: 1.6vh;
 }
-.responsabilities{
+
+.responsabilities {
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 10%;
@@ -98,5 +120,45 @@
 }
 
 .blurred {
-    filter: blur(5px); /* Apply blur effect */
+    filter: blur(5px);
+    /* Apply blur effect */
+}
+.custom-experience-list{
+
+    margin-top:20%;
+}
+.custom-experience-list .ant-list-item {
+    
+    position: relative;
+
+}
+
+.custom-experience-list .ant-list-item::after {
+    content: '';
+    position: absolute;
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, #ff3eff, #b165f8);
+    /* Replace with your desired gradient colors */
+}
+
+h1 span {
+
+    align-items: top;
+    
+    font-size: 4.5vh;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #f04cffef, #b05cff);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ant-list-item .exp-grid{
+    margin-bottom: 0px !important;
+    padding: 0px 0px 0px 0px;
+
 }

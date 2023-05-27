@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Button, Row, List } from 'antd';
+import { Button, List } from 'antd';
 import './ProfessionalExperiences.css';
 import { ProfessionalExperiencesDataStructure } from './ProfessionalExperiencesDataStructure'
 function ProfessionalExperiences() {
@@ -51,24 +51,29 @@ function ProfessionalExperiences() {
 
                     {hide[index] ?
                         <div>
-                            <Row>
                                 <div className='exp-title'>
                                     <h3>{experience.company} - {experience.position}</h3>
                                 </div>
 
-                            </Row>
                             <div className='professional-exp-details' ref={(ref) => (detailsRefs.current[index] = ref)}>
                                 <div className='hardskills'>
                                     <List
-                                        header={<div>HardSkills</div>}
+                                        size='small'
+                                        header={
+                                            <h1>
+                                                <span >HardSkills</span>
+                                            </h1>}
                                         itemLayout="horizontal"
+                                        className='custom-experience-list'
                                         dataSource={experience.hardSkills}
                                         renderItem={(hardskill, index) => (
-                                            <List.Item>
+                                            <List.Item
+                                                className='exp-grid'
+                                            >
                                                 <List.Item.Meta
 
-                                                    title={<div className="hardskill-title" style={{ marginBottom: 0 }}>{hardskill.title}</div>}
-                                                    description={<div className="hardskill-description" style={{ marginLeft: '10px' }}>{hardskill.description}</div>}
+                                                    title={<div className="hardskill-title">{hardskill.title}</div>}
+                                                    description={<div className="hardskill-description">{hardskill.description}</div>}
                                                 />
                                             </List.Item>
                                         )}
@@ -77,8 +82,9 @@ function ProfessionalExperiences() {
                                 <div className='responsabilities'></div>
                                 <Button
                                     type="primary"
+                                    danger
                                     shape="circle"
-                                    size="small"
+                                    size="middle"
                                     className='collapse-btn'
                                     onClick={() => expand(index)}
                                 >

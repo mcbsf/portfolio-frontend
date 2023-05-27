@@ -2,7 +2,7 @@
 export const ProfessionalExperiencesDataStructure = [
     {
         company: "Creditas",
-        position: "Senior Software Engineer",
+        position: "Sr Software Engineer",
         duration: "AUG 2022 - PRESENT",
         hardSkills: [
             { 'title': 'python', 'description': 'flask, pandas, pytest' },
@@ -25,7 +25,7 @@ export const ProfessionalExperiencesDataStructure = [
     },
     {
         company: "BTG Pactual",
-        position: "Senior Software Engineer",
+        position: "Sr Software Engineer",
         duration: "JAN 2022 - AUG 2022",
         hardSkills: [
             { title: "python", description: "fastapi, pandas, pytest, pyspark" },
@@ -77,7 +77,7 @@ export const ProfessionalExperiencesDataStructure = [
         ],
     },
     {
-        company: "VTB Solutions",
+        company: "VTB",
         position: "Intern Software Developer",
         duration: "FEB 2019 - JUN 2019",
         hardSkills: [
