@@ -69,8 +69,8 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to right, #cecece,#d1d1d1);
-    text-shadow: 2px 2px 4px rgba(43, 43, 43, 0.3);
+    background-image: linear-gradient(to right, #ffffff,#f8f8f8);
+    text-shadow: 2px 2px 4px rgba(107, 107, 107, 0.76);
 }
 .professional-exp-details h3 {
     position: relative;
