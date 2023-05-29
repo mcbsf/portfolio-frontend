@@ -51,9 +51,9 @@ function ProfessionalExperiences() {
 
                     {hide[index] ?
                         <div>
-                                <div className='exp-title'>
-                                    <h3>{experience.company} - {experience.position}</h3>
-                                </div>
+                            <div className='exp-title'>
+                                <h3>{experience.company} - {experience.position}</h3>
+                            </div>
 
                             <div className='professional-exp-details' ref={(ref) => (detailsRefs.current[index] = ref)}>
                                 <div className='hardskills'>
@@ -61,7 +61,7 @@ function ProfessionalExperiences() {
                                         size='small'
                                         header={
                                             <h1>
-                                                <span >HardSkills</span>
+                                                <span className='hardskills-style'>HardSkills</span>
                                             </h1>}
                                         itemLayout="horizontal"
                                         className='custom-experience-list'
@@ -79,7 +79,29 @@ function ProfessionalExperiences() {
                                         )}
                                     />
                                 </div>
-                                <div className='responsabilities'></div>
+                                <div className='blank'/> 
+                                <div className='responsabilities'>
+                                    <List
+                                        size='small'
+                                        header={
+                                            <h1>
+                                                <span className='responsabilities-style'>Responsabilities</span>
+                                            </h1>}
+                                        itemLayout="horizontal"
+                                        className='custom-experience-list-responsabilities'
+                                        dataSource={experience.responsibilities}
+                                        renderItem={(responsability, index) => (
+                                            <List.Item
+                                                className='exp-grid'
+                                            >
+                                                <List.Item.Meta
+
+                                                    title={<div className="hardskill-title">{responsability}</div>}
+                                                />
+                                            </List.Item>
+                                        )}
+                                    />
+                                </div>
                                 <Button
                                     type="primary"
                                     danger

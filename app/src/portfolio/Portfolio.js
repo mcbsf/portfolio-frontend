@@ -30,7 +30,7 @@ function Portfolio() {
                     <img src={ProfilePhoto} alt="Some Title" />
                 </div>
                 <div className='profile-data'>
-                    <h1 className='hello'>Hello, I'm Mario!</h1>
+                    <h1 className='hello'>It's me, Mario!</h1>
                     <div className='text'>
                         <p>
                         Senior Software Engineer with a passion for leveraging my skills and experience to contribute to the growth and success of dynamic organizations. With 5+ years of experience in engineering, I bring a strong understanding of software development methodologies and best practices.
