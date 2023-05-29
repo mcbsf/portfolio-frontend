@@ -58,14 +58,14 @@
 }
 .exp-title  h3{
     z-index: 10;
-    position: fixed;
-    top: 0%;
-    width: 100%;
+    position: relative;
+    top: -150px !important;
+    width: 80%;
     align-items: center;
-    left:28%;
+    left:27%;
     
-    transform: translateX(-2%);
-    font-size: 5vh;
+    transform: translateX(-0%);
+    font-size: 4.5vh;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -81,6 +81,7 @@
 }
 
 .hardskills {
+    margin-left: 70px;
     width: 100%;
     flex: 1;
     flex-basis: 30%;
@@ -90,6 +91,9 @@
     
     padding: 0px 0px 0px 0px;
     left: -10%;
+
+    height: 100vh !important;
+    margin-top: -5vh !important;
 }
 
 .hardskill-title {
@@ -118,17 +122,21 @@
     align-items: top;
     height: 100%;
 }
+
 .responsabilities {
-    display: fixed;
-    top: 20%;
+    /* Positioned the responsibilities element properly */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 80%;
     flex: 3;
     flex-basis: 50%;
     float: top;
     justify-content: center;
     align-items: top;
-    height: 100%;
-}
+    height: 100vh !important;
+    margin-top: 15vh !important;
+  }
 
 .blurred {
     filter: blur(5px);
