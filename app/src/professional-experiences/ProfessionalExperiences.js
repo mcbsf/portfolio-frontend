@@ -50,12 +50,26 @@ function ProfessionalExperiences() {
                     <p>{experience.duration}</p>
 
                     {hide[index] ?
-                        <div>
+                        <div className='prof-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
+
                             <div className='exp-title'>
+                                <span className='whitespace'>asd</span>
+
+                                <Button
+                                    type="primary"
+                                    danger
+                                    shape="circle"
+                                    size="middle"
+                                    className='collapse-btn'
+                                    onClick={() => expand(index)}
+                                >
+                                    x
+                                </Button>
                                 <h3>{experience.company} - {experience.position}</h3>
                             </div>
 
-                            <div className='professional-exp-details' ref={(ref) => (detailsRefs.current[index] = ref)}>
+
+                            <div className='professional-exp-details' >
                                 <div className='hardskills'>
                                     <List
                                         size='small'
@@ -79,7 +93,7 @@ function ProfessionalExperiences() {
                                         )}
                                     />
                                 </div>
-                                <div className='blank'/> 
+                                <div className='blank' />
                                 <div className='responsabilities'>
                                     <List
                                         size='small'
@@ -102,16 +116,6 @@ function ProfessionalExperiences() {
                                         )}
                                     />
                                 </div>
-                                <Button
-                                    type="primary"
-                                    danger
-                                    shape="circle"
-                                    size="middle"
-                                    className='collapse-btn'
-                                    onClick={() => expand(index)}
-                                >
-                                    x
-                                </Button>
                             </div>
                         </div>
                         : null}
