@@ -4,24 +4,9 @@ import { SocialIcon } from 'react-social-icons';
 import ProfilePhoto from '../assets/profile.png';
 import ProfessionalExperiences from '../professional-experiences/ProfessionalExperiences';
 import AcademicExperiences from '../academic-experiences/AcademicExperiences';
+import Projects from '../projects/Projects';
 function Portfolio() {
-    const projects = [
-        {
-            title: 'Project 1',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id tincidunt felis, eu ornare sapien.',
-            imageUrl: 'project1.jpg',
-            liveUrl: 'https://www.example.com/project1',
-            githubUrl: 'https://www.github.com/project1',
-        },
-        {
-            title: 'Project 2',
-            description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-            imageUrl: 'project2.jpg',
-            liveUrl: 'https://www.example.com/project2',
-            githubUrl: 'https://www.github.com/project2',
-        },
-        // Add more projects here
-    ];
+    
 
     return (
         <div className="portfolio">
@@ -62,28 +47,7 @@ function Portfolio() {
                     {/* Add your scientific research content here */}
                 </section>
                 <section id="projects" className="portfolio-section">
-                    <h2>Projects</h2>
-                    <div className="projects">
-                        {projects.map((project, index) => (
-                            <div className="project" key={index}>
-                                <div className="project-image">
-                                    <img src={project.imageUrl} alt={project.title} />
-                                </div>
-                                <div className="project-details">
-                                    <h3>{project.title}</h3>
-                                    <p>{project.description}</p>
-                                    <div className="project-links">
-                                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                            Live Demo
-                                        </a>
-                                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                            GitHub
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <Projects></Projects>
                 </section>
                 <section id="volunteering" className="portfolio-section">
                     <h2>Volunteering</h2>

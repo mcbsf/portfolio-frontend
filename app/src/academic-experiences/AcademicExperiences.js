@@ -24,7 +24,7 @@ function AcademicExperiences() {
             const detailsRef = detailsRefs.current[index];
             if (detailsRef) {
                 console.log(detailsRef)
-                detailsRef.scrollIntoView({ behavior: 'smooth' });
+                //detailsRef.scrollIntoView({ behavior: 'smooth' });
                 
             }
         }, 10);
