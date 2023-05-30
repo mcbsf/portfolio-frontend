@@ -113,7 +113,15 @@
     width: 90%;
 }
 
-.social-svg{
-    height: 100% !important;
-    width: 100% !important;
+.icons .social-icon{
+    height: auto;
+}
+.icons .social-svg{
+    height: auto !important;
+    width: auto !important;
+}
+
+.social-container{
+
+    top: -5px !important;
 }
