@@ -5,6 +5,7 @@ import ProfilePhoto from '../assets/profile.png';
 import ProfessionalExperiences from '../professional-experiences/ProfessionalExperiences';
 import AcademicExperiences from '../academic-experiences/AcademicExperiences';
 import Projects from '../projects/Projects';
+import ScientificResearches from '../scientific-research/ScientificResearches';
 function Portfolio() {
     
 
@@ -43,8 +44,8 @@ function Portfolio() {
                     <AcademicExperiences></AcademicExperiences>
                 </section>
                 <section id="scientific-research" className="portfolio-section">
-                    <h2>Scientific Research</h2>
                     {/* Add your scientific research content here */}
+                    <ScientificResearches></ScientificResearches>
                 </section>
                 <section id="projects" className="portfolio-section">
                     <Projects></Projects>

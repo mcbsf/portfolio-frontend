@@ -16,7 +16,7 @@ export const ProjectsDataStructure = [
     },
     {
         title: 'Requirements Engineering',
-        description: 'An academic project in which we choose a proccess to map requirements engineering about it, offering a TO BE model based on AS IS for Strategic Dependency Model, Strategic Rationale Model and Business Process Model Notion.',
+        description: 'Project to document requirements engineering processes, offering AS IS/TO BE models for Strategic Dependency Model, Strategic Rationale Model and Business Process Model Notion.',
         githubUrl: 'https://github.com/LeonardoGaldino/iStarModels',
     },
     {

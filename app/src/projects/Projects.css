@@ -22,7 +22,7 @@
     align-items: center;
     margin-top:5px;
 }
-svg{
+.projects svg{
     height: 70% !important;
     width: 70% !important;
 }

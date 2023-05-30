@@ -112,3 +112,8 @@
     transform: translateX(-50%);
     width: 90%;
 }
+
+.social-svg{
+    height: 100% !important;
+    width: 100% !important;
+}
