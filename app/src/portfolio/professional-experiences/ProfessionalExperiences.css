@@ -192,7 +192,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to right, #f04cffef, #b05cff);
+    background-image: linear-gradient(to right, #f94cffe3, #d95cff);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
