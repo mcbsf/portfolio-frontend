@@ -3,6 +3,7 @@ import './Portfolio.css';
 import { SocialIcon } from 'react-social-icons';
 import ProfilePhoto from '../assets/profile.png';
 import ProfessionalExperiences from '../professional-experiences/ProfessionalExperiences';
+import AcademicExperiences from '../academic-experiences/AcademicExperiences';
 function Portfolio() {
     const projects = [
         {
@@ -52,8 +53,9 @@ function Portfolio() {
                     <ProfessionalExperiences></ProfessionalExperiences>
                 </section>
                 <section id="academic-experience" className="portfolio-section">
-                    <h2>Academic Experience</h2>
                     {/* Add your academic experience content here */}
+
+                    <AcademicExperiences></AcademicExperiences>
                 </section>
                 <section id="scientific-research" className="portfolio-section">
                     <h2>Scientific Research</h2>

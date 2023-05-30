@@ -1,0 +1,22 @@
+
+.academic-exp-details p{
+    z-index: 6;
+    width: 65%;
+    font-weight: normal;
+    color: rgb(228, 228, 228);
+}
+
+.academic-experience-box{
+
+    z-index: 6;
+    background: linear-gradient(to right, #ad30df, #4484e4);
+    border-radius: 6px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    border-radius: 10% !important;
+    min-height: 40vh !important;
+
+    height: auto !important;
+    width: 80%;
+    margin-left: 10%; 
+}
