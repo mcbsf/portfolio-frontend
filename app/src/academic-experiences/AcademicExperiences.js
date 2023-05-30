@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Button, List } from 'antd';
+import { Button } from 'antd';
 import './AcademicExperiences.css';
 import { AcademicExperiencesDataStructure } from './AcademicExperiencesDataStructure'
 function AcademicExperiences() {
