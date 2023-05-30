@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 import './Projects.css';
 import { ProjectsDataStructure } from './ProjectsDataStructure'
