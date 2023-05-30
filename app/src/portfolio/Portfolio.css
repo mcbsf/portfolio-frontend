@@ -82,6 +82,7 @@
 
 
 .portfolio-section {
+    margin-top: 70px;
     margin-bottom: 40px;
     width: 100%;
 }
@@ -113,15 +114,20 @@
     width: 90%;
 }
 
+.icons{
+    margin-top: 50px !important;
+}
+    
 .icons .social-icon{
     height: auto;
+
 }
 .icons .social-svg{
     height: auto !important;
     width: auto !important;
 }
 
-.social-container{
+.icons .social-container{
 
     top: -5px !important;
 }

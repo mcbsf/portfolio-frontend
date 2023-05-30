@@ -2,10 +2,10 @@ import React from 'react';
 import './Portfolio.css';
 import { SocialIcon } from 'react-social-icons';
 import ProfilePhoto from '../assets/profile.png';
-import ProfessionalExperiences from '../professional-experiences/ProfessionalExperiences';
-import AcademicExperiences from '../academic-experiences/AcademicExperiences';
-import Projects from '../projects/Projects';
-import ScientificResearches from '../scientific-research/ScientificResearches';
+import ProfessionalExperiences from './professional-experiences/ProfessionalExperiences';
+import AcademicExperiences from './academic-experiences/AcademicExperiences';
+import Projects from './projects/Projects';
+import ScientificResearches from './scientific-research/ScientificResearches';
 function Portfolio() {
     
 

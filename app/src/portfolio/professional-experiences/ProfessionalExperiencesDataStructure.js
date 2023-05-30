@@ -92,7 +92,7 @@ export const ProfessionalExperiencesDataStructure = [
     {
         company: "BisaWeb",
         position: "Intern Software Developer",
-        duration: "FEB 2019 - JUN 2019",
+        duration: "JUN 2017 - MAY 2018",
         hardSkills: [
             { 'title': 'PHP', 'description': 'Laravel, Zend3' },
             { 'title': 'MySQL', 'description': '' },
