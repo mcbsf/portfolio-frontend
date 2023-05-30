@@ -65,7 +65,6 @@ function AcademicExperiences() {
                                 >
                                     x
                                 </Button>
-                                <h3>{experience.company} - {experience.position}</h3>
                             </div>
 
 

@@ -2,11 +2,17 @@
     font-weight: normal;
 }
 
+.academic-exp-details{
+
+    position: relative;
+    margin:auto;
+}
 .academic-exp-details p{
     z-index: 6;
     width: 65%;
     font-weight: normal;
     color: rgb(228, 228, 228);
+    margin-top: 5% !important;
 }
 .academic-experience-box{
 
@@ -20,5 +26,5 @@
 
     height: auto !important;
     width: 80%;
-    margin-left: 10%; 
+    margin: auto; 
 }

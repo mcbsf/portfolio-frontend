@@ -2,15 +2,14 @@
     font-weight: normal;
 }
 
-
-.scientific-research-exp-details p{
+.volunteering-exp-details p{
     z-index: 6;
     width: 65%;
     font-weight: normal;
     color: rgb(228, 228, 228);
-    margin-top: 90px !important;
+    margin-top: 100px !important;
 }
-.scientific-research-experience-box{
+.volunteering-experience-box{
 
     z-index: 6;
     background: linear-gradient(to right, #ad30df, #4484e4);

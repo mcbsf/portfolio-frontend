@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Button } from 'antd';
-import './ScientificResearches.css';
-import { ScientificResearchesDataStructure } from './ScientificResearchesDataStructure'
-function ScientificResearches() {
-    const volunteerings = ScientificResearchesDataStructure;
+import './Volunteerings.css';
+import { VolunteeringsDataStructure } from './VolunteeringsDataStructure'
+function Volunteerings() {
+    const volunteerings = VolunteeringsDataStructure;
 
     const [hide, setHide] = useState(Array(volunteerings.length).fill(false));
 
@@ -24,14 +24,14 @@ function ScientificResearches() {
             const detailsRef = detailsRefs.current[index];
             if (detailsRef) {
                 console.log(detailsRef)
-                //detailsRef.scrollIntoView({ behavior: 'smooth' });
+                detailsRef.scrollIntoView({ behavior: 'smooth' });
                 
             }
         }, 10);
     };
     return (
         <div>
-            <h2>ScientificResearches</h2>
+            <h2>Volunteerings</h2>
             {volunteerings.map((experience, index) => (
 
                 <div className="experience">
@@ -53,7 +53,7 @@ function ScientificResearches() {
                     <p>{experience.duration}</p>
 
                     {hide[index] ?
-                        <div className='scientific-research-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
+                        <div className='volunteering-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
 
                             <div className='exp-title'>
 
@@ -70,8 +70,8 @@ function ScientificResearches() {
                             </div>
 
 
-                            <div className='scientific-research-exp-details' >
-                                <p className='scientific-research-description'>{experience.description}</p>
+                            <div className='volunteering-exp-details' >
+                                <p className='volunteering-description'>{experience.description}</p>
                             </div>
                         </div>
                         : null}
@@ -81,4 +81,4 @@ function ScientificResearches() {
     );
 };
 
-export default ScientificResearches;
+export default Volunteerings;

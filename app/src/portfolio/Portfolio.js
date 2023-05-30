@@ -6,6 +6,7 @@ import ProfessionalExperiences from './professional-experiences/ProfessionalExpe
 import AcademicExperiences from './academic-experiences/AcademicExperiences';
 import Projects from './projects/Projects';
 import ScientificResearches from './scientific-research/ScientificResearches';
+import Volunteerings from './volunteerings/Volunteerings';
 function Portfolio() {
     
 
@@ -51,8 +52,7 @@ function Portfolio() {
                     <Projects></Projects>
                 </section>
                 <section id="volunteering" className="portfolio-section">
-                    <h2>Volunteering</h2>
-                    {/* Add your volunteering content here */}
+                    <Volunteerings></Volunteerings>
                 </section>
             </div>
 
