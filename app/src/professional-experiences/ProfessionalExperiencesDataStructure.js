@@ -89,5 +89,18 @@ export const ProfessionalExperiencesDataStructure = [
             "Software Developer in software factory to build ERP and CRM for several clients"
         ],
     },
+    {
+        company: "BisaWeb",
+        position: "Intern Software Developer",
+        duration: "FEB 2019 - JUN 2019",
+        hardSkills: [
+            { 'title': 'PHP', 'description': 'Laravel, Zend3' },
+            { 'title': 'MySQL', 'description': '' },
+            { 'title': 'XAMPP', 'description': '' }
+        ],
+        responsibilities: [
+            "Software Developer in a company that managed specific taxes from organizations"
+        ],
+    },
 ];
 

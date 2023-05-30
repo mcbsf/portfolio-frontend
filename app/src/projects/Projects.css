@@ -4,9 +4,8 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    left:50%;
-    
+    width: 80% !important;
+    margin-left:10%;
 }
 
 .ant-card{
