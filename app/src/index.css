@@ -11,6 +11,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  aspect-ratio: 16/9 !important;
 }
 
 code {

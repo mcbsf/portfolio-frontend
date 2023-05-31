@@ -12,7 +12,7 @@ function Portfolio() {
 
     return (
         <div className="portfolio">
-
+            
             <div class='overlay-content'>
                 <div className='profile-photo'>
                     <img src={ProfilePhoto} alt="Some Title" />
@@ -44,12 +44,12 @@ function Portfolio() {
 
                     <AcademicExperiences></AcademicExperiences>
                 </section>
+                <section id="projects" className="portfolio-section">
+                    <Projects></Projects>
+                </section>
                 <section id="scientific-research" className="portfolio-section">
                     {/* Add your scientific research content here */}
                     <ScientificResearches></ScientificResearches>
-                </section>
-                <section id="projects" className="portfolio-section">
-                    <Projects></Projects>
                 </section>
                 <section id="volunteering" className="portfolio-section">
                     <Volunteerings></Volunteerings>
