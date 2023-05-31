@@ -23,7 +23,8 @@
     top:0;
     width: 100%;
 
-    background: linear-gradient(to right, #a724db, #3181f8);}
+    background: linear-gradient(to right, #a724db, #3181f8);
+}
 
 .portfolio-header a {
     color: #ffffff;
