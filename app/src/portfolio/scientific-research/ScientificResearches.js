@@ -31,7 +31,7 @@ function ScientificResearches() {
     };
     return (
         <div>
-            <h2>ScientificResearches</h2>
+            <h2>Scientific Researches</h2>
             {volunteerings.map((experience, index) => (
 
                 <div className="experience">
