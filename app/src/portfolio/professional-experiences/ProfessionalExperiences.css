@@ -67,7 +67,7 @@
     z-index: 7;
     width: 80%;
     align-items: center;
-    font-size: 6vh;
+    font-size: 5vh;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -75,7 +75,7 @@
     #bbbbbb, #c3c3c3, #aaaaaa, #c0c0c0,
     #bbbbbb, #c3c3c3, #aaaaaa, #c0c0c0,
     #bbbbbb, #c3c3c3, #aaaaaa, #c0c0c0);
-    text-shadow: 2px 2px 4px rgba(68, 68, 68, 0.226);
+    text-shadow: 2px 2px 4px rgba(90, 90, 90, 0.205);
 }
 
 .hardskills {
