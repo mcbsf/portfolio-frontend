@@ -22,7 +22,7 @@
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
     align-items: center;
     border-radius: 10% !important;
-    min-height: 40vh !important;
+    min-height: 40vh !important; /*fix min heigh based on text size*/
 
     height: auto !important;
     width: 80%;

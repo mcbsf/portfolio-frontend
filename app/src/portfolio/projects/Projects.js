@@ -16,13 +16,13 @@ function Projects() {
                         <Card 
                             className='col-sm-6'
                             title=<div>
-                                    {project.title}
+                                    {project.title} 
                                     <SocialIcon className='icon' url={project.githubUrl} bgColor="black" fgColor="white" /> 
                                 </div>
                             bordered={false} style={{ width: 300 }}>
                             {project.description}
                             
-                        </Card>
+                        </Card>//icons related, like robots, coins, etc
 
                 ))}
 

@@ -2,19 +2,28 @@
 .header-like {
     top: 0px;
     background: linear-gradient(to right, #a724db, #3181f8);
-    padding: 20px;
+    padding: 0px;
     border-radius: 10px;
     height: 35vh;
 
 }
 
 .portfolio-header {
+    z-index: 10;
     vertical-align: top;
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: white;
-}
+    padding-top:1%;
+    padding-bottom:1%;
+    margin:0px;
+    border-radius: 10px;
+    position: fixed;
+    top:0;
+    width: 100%;
+
+    background: linear-gradient(to right, #a724db, #3181f8);}
 
 .portfolio-header a {
     color: #ffffff;
