@@ -55,6 +55,8 @@
 }
 .exp-title{
     position: relative;
+
+    margin:auto !important;
 }
 .whitespace{
     color: transparent;
@@ -63,18 +65,17 @@
 
     margin-top: 0%;
     z-index: 7;
-    position: relative;
     width: 80%;
     align-items: center;
-    left:27%;
-    
-    transform: translateX(-0%);
-    font-size: 4.5vh;
+    font-size: 6vh;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to right, #e0e0e0,#f0f0f0);
-    text-shadow: 1px 1px 3px rgba(136, 136, 136, 0.534);
+    background-image: conic-gradient(#bbbbbb, #c3c3c3, #cccccc, #c0c0c0,
+    #bbbbbb, #c3c3c3, #aaaaaa, #c0c0c0,
+    #bbbbbb, #c3c3c3, #aaaaaa, #c0c0c0,
+    #bbbbbb, #c3c3c3, #aaaaaa, #c0c0c0);
+    text-shadow: 2px 2px 4px rgba(68, 68, 68, 0.226);
 }
 
 .hardskills {
