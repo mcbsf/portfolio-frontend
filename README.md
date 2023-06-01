@@ -15,7 +15,7 @@ To install and run the portfolio locally, follow these steps:
 2. Navigate to the app/ directory:
 
     ```bash
-   cd app/
+   cd portfolio-frontend/app/
    ```
 
 3. Install the dependencies using npm or yarn:
