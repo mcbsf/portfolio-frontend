@@ -9,7 +9,7 @@ To install and run the portfolio locally, follow these steps:
 1. Clone this repository to your local machine using the following command:
 
    ```bash
-   git clone https://github.com/mcbsf/portfolio-frontend
+   git clone git@github.com:mcbsf/portfolio-frontend.git
    ```
 
 2. Navigate to the app/ directory:
