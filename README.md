@@ -49,6 +49,8 @@ Once you have the portfolio running locally, you can customize it with your own 
 
 Feel free to explore the codebase and make any necessary changes to adapt it to your specific needs.
 
+It is not mobile responsive yet. Also not responsive to aspect ratio 4:3.
+
 ## Folder Structure
 
 Here is the folder structure of this repository:
