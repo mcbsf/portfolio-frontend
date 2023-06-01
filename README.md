@@ -76,6 +76,18 @@ deploy/
 └── prod/
     └──sensitive_data/
 ```
+The main folders and files in the repository are as follows:
+
+- **app/:** This is the root directory of the React application.
+- **public/:** This directory contains public files such as the favicon, index.html, logo images, and the robots.txt file.
+- **src/:** This directory contains the source code for the React components and other related files.
+- **assets/:** This directory contains assets used in the portfolio, such as images.
+- **header/:** This directory contains the header component files.
+- **portfolio/:** This directory contains the main components for the portfolio sections, including academic experiences, professional experiences, projects, scientific research, and volunteerings. These sections showcase different aspects of the portfolio owner's work.
+- **deploy/**: This directory contains deployment-related files and configurations specific to the production environment. It includes Terraform files for infrastructure provisioning and sensitive data files.
+
+Please note that the actual files are excluded from this description for brevity.
+
 ## Contribution
 
 I welcome contributions to enhance the functionality and features of this portfolio repository. If you have any suggestions, bug fixes, or improvements, feel free to open a pull request. Please ensure that your contributions align with the goals and style of this project.
