@@ -15,7 +15,6 @@
 }
 
 .experience p {
-    color: gray;
     align-items: top;
     margin-top: 5px;
     left: 50%;
@@ -29,7 +28,7 @@
     transform: translateX(30%);
 }
 .prof-experience-box{
-
+    margin-top: -2% !important;
     background: linear-gradient(to right, #a724db, #3181f8);
     z-index: 6;
     border-radius: 6px;
@@ -38,7 +37,7 @@
     border-radius: 10% !important;
     height: auto;
     width: 90%;
-    padding-top: 2%;
+    padding-top:3%;
     margin-left:5% !important;
 }
 .professional-exp-details {
@@ -103,7 +102,7 @@
 .hardskill-description {
     display: inline-block;
     margin-left: 10px;
-    color: rgb(204, 204, 204);
+    color: rgb(243, 243, 243);
     font-size: 1.7vh;
 }
 

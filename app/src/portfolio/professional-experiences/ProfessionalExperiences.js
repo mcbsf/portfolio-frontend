@@ -91,6 +91,13 @@ function ProfessionalExperiences() {
                                                 />
                                             </List.Item>
                                         )}
+                                        pagination={{
+                                            position: "bottom",
+                                            size: "small",
+                                            pageSize: 4,
+                                            align: "center"
+                                            
+                                        }}
                                     />
                                 </div>
                                 <div className='blank' />

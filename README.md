@@ -83,7 +83,7 @@ The main folders and files in the repository are as follows:
 - **src/:** This directory contains the source code for the React components and other related files.
 - **assets/:** This directory contains assets used in the portfolio, such as images.
 - **header/:** This directory contains the header component files.
-- **portfolio/:** This directory contains the main components for the portfolio sections, including academic experiences, professional experiences, projects, scientific research, and volunteerings. These sections showcase different aspects of the portfolio owner's work.
+- **portfolio/:** This directory contains the main components for the portfolio sections and its own component files.
 - **deploy/**: This directory contains deployment-related files and configurations specific to the production environment. It includes Terraform files for infrastructure provisioning and sensitive data files.
 
 Please note that the actual files are excluded from this description for brevity.

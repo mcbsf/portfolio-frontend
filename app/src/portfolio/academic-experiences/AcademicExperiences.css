@@ -6,13 +6,16 @@
 
     position: relative;
     margin:auto;
+
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
 }
 .academic-exp-details p{
-    z-index: 6;
     width: 65%;
     font-weight: normal;
     color: rgb(228, 228, 228);
     margin-top: 5% !important;
+    margin-bottom: 5% !important;
 }
 .academic-experience-box{
 
@@ -22,8 +25,7 @@
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
     align-items: center;
     border-radius: 10% !important;
-    min-height: 40vh !important; /*fix min heigh based on text size*/
-
+    padding-bottom: 1%;
     height: auto !important;
     width: 80%;
     margin: auto; 
