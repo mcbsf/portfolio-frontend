@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Portfolio.css';
 import { SocialIcon } from 'react-social-icons';
 import ProfilePhoto from '../assets/profile.png';
@@ -8,10 +8,8 @@ import AcademicExperiences from './academic-experiences/AcademicExperiences';
 import Projects from './projects/Projects';
 import ScientificResearches from './scientific-research/ScientificResearches';
 import Volunteerings from './volunteerings/Volunteerings';
-import { Button } from 'antd';
 
 function Portfolio() {
-    const [chatBotVisible, setChatBotVisible] = useState(false)
     
     return (
         <div className="portfolio">
