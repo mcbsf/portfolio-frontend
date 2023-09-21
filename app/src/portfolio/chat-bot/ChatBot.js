@@ -14,7 +14,7 @@ function ChatBot() {
     const closeChat = () => {
         setVisible(false);
         setMessage('');
-        setChatHistory([{ sender: 'Bot', message: "Olá, tudo bem?" }]);
+        setChatHistory([{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? I can answer any question about this website content with LLM technicques, so I can eventually make some hallucination" }]);
     };
 
     const handleSendMessage = () => {
@@ -40,31 +40,29 @@ function ChatBot() {
 
             <Modal
                 title="Chatbot"
-                visible={visible}
+                open={visible}
                 onOk={closeChat}
                 onCancel={closeChat}
-                width={400}
                 zIndex={999}
                 bodyStyle={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
+                className="chat-modal" 
+                footer={null}
             >
                 <List
                     dataSource={chatHistory}
                     renderItem={(item) => (
                         <List.Item>
                             <div
-                                style={{
-                                    backgroundColor: item.sender === 'Bot' ? '#E6F7FF' : '#FFF',
-                                    padding: '8px',
-                                    borderRadius: '4px',
-                                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-                                }}
+                                className={`chatMessage ${item.sender === 'Bot' ? 'botMessage' : 'userMessage'}`} 
                             >
-                                {item.message}
+                                <div className='chat-content'>{item.message}</div>
                             </div>
                         </List.Item>
                     )}
+                    className="chat-history" 
                 />
                 <Input
+                    className='new-message'
                     placeholder="Type your message..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
