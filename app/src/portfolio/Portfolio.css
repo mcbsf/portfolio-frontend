@@ -132,3 +132,13 @@
 
     top: -5px !important;
 }
+
+.help-btn{
+    position: fixed;
+    top: 85% !important;
+    left: 85%;
+    z-index: 998;
+    font-size: 18px !important;
+    height: 60px !important;
+    width: 180px !important;
+}
