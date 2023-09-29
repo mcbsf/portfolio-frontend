@@ -7,7 +7,9 @@ import postRequest from '../../postService';
 import { config } from '../../config';
 
 function ChatBot() {
-    const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about this website content with LLM technicques \n\nPS: I can eventually write some errors" }]
+    const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about this website content with LLM technicques \n\nPS: I can eventually write some errors" },
+    { sender: 'User', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about this website content with LLM technicques \n\nPS: I can eventually write some errors" },
+    { sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about this website content with LLM technicques \n\nPS: I can eventually write some errors" }]
 
     const [visible, setVisible] = useState(false);
     const [message, setMessage] = useState('');
@@ -47,7 +49,7 @@ function ChatBot() {
             }
 
         })
-        
+
     };
     return (
         <div>
@@ -83,11 +85,13 @@ function ChatBot() {
                 <List
                     dataSource={chatHistory}
                     renderItem={(item) => (
+                        <div className='line'>
                             <div
                                 className={`chatMessage ${item.sender === 'Bot' ? 'botMessage' : 'userMessage'}`}
                             >
                                 <div className='chat-content'>{item.message}</div>
                             </div>
+                        </div>
                     )}
                     className="chat-history"
                 />

@@ -31,6 +31,7 @@
 
     height: 80% !important;
     max-height: 80% !important;
+    display: flow-root;
     /* Set a maximum height and make it scrollable */
     overflow-y: auto;
 }
@@ -43,7 +44,7 @@
     padding: 8px;
     border-radius: 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.349);
-    max-width: 45%;
+    max-width: 55%;
 }
 
 /* Style user messages */
@@ -64,4 +65,10 @@
 }
 
 .new-message{
+}
+
+.line{
+    overflow-y: auto;
+    height: auto;
+    width: 100% !important;
 }
