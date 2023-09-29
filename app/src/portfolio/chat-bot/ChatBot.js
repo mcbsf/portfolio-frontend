@@ -38,11 +38,10 @@ function ChatBot() {
             if (!result.isError) {
                 const newChatHistory = [...chatHistory, { sender: 'User', message }];
                 // Simulate a chatbot response for demonstration purposes
-                const botResponse = 'This is a placeholder response.';
+                const botResponse = result.body;
                 newChatHistory.push({ sender: 'Bot', message: botResponse });
                 setChatHistory(newChatHistory);
                 setMessage('');
-                window.location.reload();
             } else {
                 console.log("ERROR")
             }
@@ -84,13 +83,11 @@ function ChatBot() {
                 <List
                     dataSource={chatHistory}
                     renderItem={(item) => (
-                        <List.Item>
                             <div
                                 className={`chatMessage ${item.sender === 'Bot' ? 'botMessage' : 'userMessage'}`}
                             >
                                 <div className='chat-content'>{item.message}</div>
                             </div>
-                        </List.Item>
                     )}
                     className="chat-history"
                 />
