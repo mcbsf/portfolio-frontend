@@ -8,25 +8,6 @@
     margin-top:2%
 }
 
-
-.experience {
-
-
-}
-
-.experience p {
-    align-items: top;
-    margin-top: 5px;
-    left: 50%;
-    transform: translateX(30%);
-}
-
-.experience h3 {
-    margin-bottom: 0px;
-
-    left: 50%;
-    transform: translateX(30%);
-}
 .prof-experience-box{
 
     max-height: 50em !important;
@@ -208,4 +189,17 @@
     color: transparent;
     background-image: linear-gradient(to right, #6000ddbe, #0066ff);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.question-main {
+    margin-top:1% !important;
+    margin-left: 1.5% !important;
+    height: 6.2% !important;
+    width: 6.2% !important;
+    max-height: 6.2% !important;
+    max-width: 6.2% !important;
+    margin: 0px 0px 0px 0px ;
+    padding: 0px 0px 0px 0px ;
+    cursor: pointer;
 }

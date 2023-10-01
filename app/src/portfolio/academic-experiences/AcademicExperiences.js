@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Button } from 'antd';
 import './AcademicExperiences.css';
-import { AcademicExperiencesDataStructure } from './AcademicExperiencesDataStructure'
+import { AcademicExperiencesDataStructure } from './AcademicExperiencesDataStructure';
+import QuestionBtn from '../../assets/mario-question.png';
+
 function AcademicExperiences() {
     const academicExperiences = AcademicExperiencesDataStructure;
 
@@ -36,17 +38,14 @@ function AcademicExperiences() {
 
                 <div className="experience">
                     <h3>{experience.course} <span className='course'>{experience.school}</span>
-                        <Button
-                            type="primary"
-                            shape="circle"
-                            size="small"
-                            className="expand-btn"
+                    <div
+                            className='question-photo'
                             onClick={() => {
                                 expand(index);
                             }}
                         >
-                            {hide[index] ? '-' : '+'}
-                        </Button>
+                            <img src={QuestionBtn} alt="Some Title" />
+                        </div>
                     </h3>
                     <p>{experience.duration}</p>
 

@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Button } from 'antd';
 import './ScientificResearches.css';
-import { ScientificResearchesDataStructure } from './ScientificResearchesDataStructure'
+import { ScientificResearchesDataStructure } from './ScientificResearchesDataStructure';
+import QuestionBtn from '../../assets/mario-question.png';
 function ScientificResearches() {
     const volunteerings = ScientificResearchesDataStructure;
 
@@ -25,7 +26,7 @@ function ScientificResearches() {
             if (detailsRef) {
                 console.log(detailsRef)
                 //detailsRef.scrollIntoView({ behavior: 'smooth' });
-                
+
             }
         }, 10);
     };
@@ -35,28 +36,22 @@ function ScientificResearches() {
             {volunteerings.map((experience, index) => (
 
                 <div className="experience">
-                    
-                    
+
+
                     <h3>{experience.title} <span className='location'>{experience.location}</span>
-                        <Button
-                            type="primary"
-                            shape="circle"
-                            size="small"
-                            className="expand-btn"
+                        <div
+                            className='question-photo'
                             onClick={() => {
                                 expand(index);
                             }}
                         >
-                            {hide[index] ? '-' : '+'}
-                        </Button>
+                            <img src={QuestionBtn} alt="Some Title" />
+                        </div>
                     </h3>
                     <p>{experience.duration}</p>
-
                     {hide[index] ?
                         <div className='scientific-research-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
-
                             <div className='exp-title'>
-
                                 <Button
                                     type="primary"
                                     danger

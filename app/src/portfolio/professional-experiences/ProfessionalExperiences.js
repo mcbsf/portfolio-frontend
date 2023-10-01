@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { Button, List } from 'antd';
 import './ProfessionalExperiences.css';
 import { ProfessionalExperiencesDataStructure } from './ProfessionalExperiencesDataStructure'
+import QuestionBtn from '../../assets/mario-question.png';
+
 function ProfessionalExperiences() {
     const professionalExperiences = ProfessionalExperiencesDataStructure;
 
@@ -38,17 +40,15 @@ function ProfessionalExperiences() {
                         :<div>
 
                     <h3>{experience.company} - {experience.position}
-                        <Button
-                            type="primary"
-                            shape="circle"
-                            size="small"
-                            className="expand-btn"
+                        <div 
+                            className='question-photo question-main'
                             onClick={() => {
                                 expand(index);
                             }}
                         >
-                            {hide[index] ? '-' : '+'}
-                        </Button>
+                            <img src={QuestionBtn} alt="Some Title" />
+                        </div>
+                        
                     </h3>
                     <p>{experience.duration}</p>
                     </div>}
