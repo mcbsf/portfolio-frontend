@@ -24,7 +24,6 @@ function ProfessionalExperiences() {
             const detailsRef = detailsRefs.current[index];
             if (detailsRef) {
                 console.log(detailsRef)
-                detailsRef.scrollIntoView({ behavior: 'smooth' });
             }
         }, 10);
     };
@@ -32,8 +31,12 @@ function ProfessionalExperiences() {
         <div>
             <h2>Professional Experience</h2>
             {professionalExperiences.map((experience, index) => (
-
+                
                 <div className="experience">
+                    {hide[index] ?
+                        null
+                        :<div>
+
                     <h3>{experience.company} - {experience.position}
                         <Button
                             type="primary"
@@ -48,6 +51,7 @@ function ProfessionalExperiences() {
                         </Button>
                     </h3>
                     <p>{experience.duration}</p>
+                    </div>}
 
                     {hide[index] ?
                         <div className='prof-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
