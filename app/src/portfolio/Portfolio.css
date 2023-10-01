@@ -72,6 +72,11 @@
     margin-left:15%;
     margin-right: 0%;
 }
+.profile-data p{
+
+    justify-content: left;
+    text-align: left;
+}
 .hello {
     font-size: 3.5vh;
 }

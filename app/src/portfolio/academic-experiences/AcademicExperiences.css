@@ -4,29 +4,42 @@
 
     position: relative;
     margin:auto;
-
     margin-top: 5% !important;
     margin-bottom: 5% !important;
 }
 .academic-exp-details p{
     width: 65%;
+    margin-left: 20% !important;
+
     font-weight: normal;
-    color: rgb(228, 228, 228);
-    margin-top: 5% !important;
+    align-items: center;
+    display:center;
+    color: rgb(228, 228, 228) !important;
+    margin-top: -5% !important;
     margin-bottom: 5% !important;
 }
 .academic-experience-box{
 
     z-index: 6;
     background: linear-gradient(to right, #a724db, #3181f8);
-    border-radius: 6px;
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
     align-items: center;
-    border-radius: 10% !important;
+    border-radius: 50% !important;
     padding-bottom: 1%;
     height: auto !important;
     width: 80%;
     margin: auto; 
 }
 
+.academic-description{
+    color:white !important;
+}
 
+.academic-experience-box .collapse-btn{
+    z-index: 7;
+    position: relative;
+    vertical-align: middle;
+    margin: auto;
+    margin-top: 2% !important;
+    margin-bottom: 2% !important;
+}
