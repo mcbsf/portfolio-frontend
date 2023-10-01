@@ -37,7 +37,7 @@ function AcademicExperiences() {
             {academicExperiences.map((experience, index) => (
 
                 <div className="experience">
-                    <h3>{experience.course} <span className='course'>{experience.school}</span>
+                    <h3>{experience.course} -&nbsp; <span className='description'> {experience.school}</span>
                     <div
                             className='question-photo'
                             onClick={() => {

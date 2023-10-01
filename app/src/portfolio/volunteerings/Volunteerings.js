@@ -37,7 +37,7 @@ function Volunteerings() {
                 <div className="experience">
                     
                     
-                    <h3>{experience.title} <span className='location'>{experience.location}</span>
+                    <h3>{experience.title} -&nbsp;<span className='description'>{experience.location}</span>
                         <Button
                             type="primary"
                             shape="circle"

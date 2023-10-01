@@ -31,15 +31,15 @@ function ProfessionalExperiences() {
     };
     return (
         <div>
-            <h2>Professional Experience</h2>
+            {hide.every(v => v === false) ?<h2>Professional Experience</h2>:null}
             {professionalExperiences.map((experience, index) => (
                 
                 <div className="experience">
-                    {hide[index] ?
-                        null
-                        :<div>
-
-                    <h3>{experience.company} - {experience.position}
+                    {hide.every(v => v === false) ?
+                        
+                        <div>
+                            
+                    <h3>{experience.company} - &nbsp;<span className='description'>{experience.position} </span>
                         <div 
                             className='question-photo question-main'
                             onClick={() => {
@@ -51,7 +51,7 @@ function ProfessionalExperiences() {
                         
                     </h3>
                     <p>{experience.duration}</p>
-                    </div>}
+                    </div>:null}
 
                     {hide[index] ?
                         <div className='prof-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>

@@ -38,7 +38,7 @@ function ScientificResearches() {
                 <div className="experience">
 
 
-                    <h3>{experience.title} <span className='location'>{experience.location}</span>
+                    <h3>{experience.title} -&nbsp;<span className='description'>{experience.location}</span>
                         <div
                             className='question-photo'
                             onClick={() => {

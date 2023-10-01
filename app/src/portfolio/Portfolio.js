@@ -29,9 +29,9 @@ function Portfolio() {
                         </p>
                     </div>
                     <div className='icons'>
-                        <SocialIcon className='icon' url="https://www.linkedin.com/in/mario-cardoso-95393b175/" fgColor="white" />
                         <SocialIcon className='icon' url="mailto:mariocbsf@gmail.com" bgColor="red" fgColor="white" />
                         <SocialIcon className='icon' url="https://www.github.com/mcbsf" bgColor="black" fgColor="white" />
+                        <SocialIcon className='icon' url="https://www.linkedin.com/in/mario-cardoso-95393b175/" fgColor="white" />
                     </div>
                 </div>
 
