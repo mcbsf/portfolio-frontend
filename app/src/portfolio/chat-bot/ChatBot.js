@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Input, List } from 'antd';
+import { Modal, Button, Input, List, Spin } from 'antd';
 import './ChatBot.css';
 
 import postRequest from '../../postService';
@@ -9,9 +9,12 @@ import { config } from '../../config';
 function ChatBot() {
     const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about this website content with LLM technicques \n\nPS: I can eventually write some errors" }]
 
+
+    const [loading, setLoading] = useState(false);
     const [visible, setVisible] = useState(false);
     const [message, setMessage] = useState('');
     const [chatHistory, setChatHistory] = useState(default_chat_msg);
+
 
     const openChat = () => {
         setVisible(true);
@@ -25,6 +28,7 @@ function ChatBot() {
 
     const handleSendMessage = () => {
         if (message.trim() === '') return;
+        setLoading(true);
         console.log(config);
         console.log("post");
         postRequest(
@@ -42,7 +46,9 @@ function ChatBot() {
                 newChatHistory.push({ sender: 'Bot', message: botResponse });
                 setChatHistory(newChatHistory);
                 setMessage('');
+                setLoading(false)
             } else {
+                setLoading(false)
                 console.log("ERROR")
             }
 
@@ -61,6 +67,7 @@ function ChatBot() {
                 Chatbot Help
             </Button>
 
+            <Spin spinning={loading}>
             <Modal
                 title="Chatbot"
                 open={visible}
@@ -93,8 +100,8 @@ function ChatBot() {
                     )}
                     className="chat-history"
                 />
-
             </Modal>
+                </Spin>
         </div>
     );
 };
