@@ -39,7 +39,8 @@ function ChatBot() {
         ).then(result => {
             console.log("RESULT NO COMPONENTE");
             console.log(result);
-            if (result) {
+            try {
+                
                 if (!result.isError) {
                     const newChatHistory = [...chatHistory, { sender: 'User', message }];
                     // Simulate a chatbot response for demonstration purposes
@@ -49,22 +50,18 @@ function ChatBot() {
                     setMessage('');
                     setLoading(false)
                 } else {
-                    setLoading(false)
-                    console.log("ERROR")
+                    throw result;
                 }
-            } else {
-                const newChatHistory = [...chatHistory, error_msg];
+            } catch (error) {
+                
+                const newChatHistory = [...chatHistory, { sender: 'User', message }];
+                // Simulate a chatbot response for demonstration purposes
+                newChatHistory.push(error_msg);
                 setChatHistory(newChatHistory);
                 setMessage('');
                 setLoading(false)
             }
 
-            const newChatHistory = [...chatHistory, { sender: 'User', message }];
-            // Simulate a chatbot response for demonstration purposes
-            newChatHistory.push(error_msg);
-            setChatHistory(newChatHistory);
-            setMessage('');
-            setLoading(false)
         })
 
     };
