@@ -95,7 +95,7 @@ function ChatBot() {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         onPressEnter={handleSendMessage}
-                        addonAfter={<Button onClick={handleSendMessage}>Send</Button>}
+                        addonAfter={<Button onClick={handleSendMessage} disabled={loading}>Send</Button>}
                     />
                 }
             >
