@@ -29,8 +29,8 @@
 /* Style the chat history */
 .chat-history {
 
-    height: 80% !important;
-    max-height: 80% !important;
+    height: 99% !important;
+    max-height: 100% !important;
     display: flow-root;
     /* Set a maximum height and make it scrollable */
     overflow-y: auto;
@@ -60,11 +60,13 @@
 .chat-content{
     margin-left: 10%;
     margin-right: 10%;
-
     white-space: pre-wrap;
+
 }
 
 .new-message{
+    margin-bottom:-2% !important;
+    height: 10%  !important;
 }
 
 .line{

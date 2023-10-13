@@ -61,8 +61,7 @@ function ChatBot() {
 
             const newChatHistory = [...chatHistory, { sender: 'User', message }];
             // Simulate a chatbot response for demonstration purposes
-            const botResponse = result.body;
-            newChatHistory.push({ sender: 'Bot', message: botResponse });
+            newChatHistory.push(error_msg);
             setChatHistory(newChatHistory);
             setMessage('');
             setLoading(false)
@@ -81,26 +80,27 @@ function ChatBot() {
                 Chatbot Help
             </Button>
 
-            <Spin spinning={loading}>
-                <Modal
-                    title="Chatbot"
-                    open={visible}
-                    onOk={closeChat}
-                    onCancel={closeChat}
-                    zIndex={999}
-                    bodyStyle={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
-                    className="chat-modal"
-                    footer={
-                        <Input
-                            className='new-message'
-                            placeholder="Type your message..."
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            onPressEnter={handleSendMessage}
-                            addonAfter={<Button onClick={handleSendMessage}>Send</Button>}
-                        />
-                    }
-                >
+            <Modal
+                title="Chatbot"
+                open={visible}
+                onOk={closeChat}
+                onCancel={closeChat}
+                zIndex={999}
+                bodyStyle={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
+                className="chat-modal"
+                footer={
+                    <Input
+                        className='new-message'
+                        placeholder="Type your message..."
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        onPressEnter={handleSendMessage}
+                        addonAfter={<Button onClick={handleSendMessage}>Send</Button>}
+                    />
+                }
+            >
+                <div className="chat-history">
+                <Spin spinning={loading}>
                     <List
                         dataSource={chatHistory}
                         renderItem={(item) => (
@@ -112,10 +112,10 @@ function ChatBot() {
                                 </div>
                             </div>
                         )}
-                        className="chat-history"
                     />
-                </Modal>
-            </Spin>
+                </Spin>
+                </div>
+            </Modal>
         </div>
     );
 };
