@@ -31,7 +31,6 @@
 
     height: 99% !important;
     max-height: 100% !important;
-    display: flow-root;
     /* Set a maximum height and make it scrollable */
     overflow-y: auto;
 }
@@ -40,11 +39,12 @@
 .chatMessage {
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
     padding: 8px;
     border-radius: 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.349);
     max-width: 55%;
+    min-width: 8%;
 }
 
 /* Style user messages */
