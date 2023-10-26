@@ -7,7 +7,7 @@ import postRequest from '../../postService';
 import { config } from '../../config';
 
 function ChatBot() {
-    const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about this website content with LLM technicques \n\nPS: I can eventually write some errors" }]
+    const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about Mario overall experiences, based on this website texts, with LLM technicques \n\nPS: I can eventually write some errors" }]
     const error_msg = { sender: 'Bot', message: "It appears that my servers are facing some issues. Can you refresh the page to try again and, if the error persist, try again after a while?" }
 
     const [loading, setLoading] = useState(false);

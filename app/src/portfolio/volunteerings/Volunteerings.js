@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { Button } from 'antd';
 import './Volunteerings.css';
 import { VolunteeringsDataStructure } from './VolunteeringsDataStructure'
+import QuestionBtn from '../../assets/mario-question.png';
+
 function Volunteerings() {
     const volunteerings = VolunteeringsDataStructure;
 
@@ -25,7 +27,7 @@ function Volunteerings() {
             if (detailsRef) {
                 console.log(detailsRef)
                 detailsRef.scrollIntoView({ behavior: 'smooth' });
-                
+
             }
         }, 10);
     };
@@ -35,25 +37,22 @@ function Volunteerings() {
             {volunteerings.map((experience, index) => (
 
                 <div className="experience">
-                    
-                    
+
+
                     <h3>{experience.title} -&nbsp;<span className='description'>{experience.location}</span>
-                        <Button
-                            type="primary"
-                            shape="circle"
-                            size="small"
-                            className="expand-btn"
+                    <div 
+                            className='question-photo question-main'
                             onClick={() => {
                                 expand(index);
                             }}
                         >
-                            {hide[index] ? '-' : '+'}
-                        </Button>
+                            <img src={QuestionBtn} alt="Some Title" />
+                        </div>
                     </h3>
                     <p>{experience.duration}</p>
 
                     {hide[index] ?
-                        <div className='volunteering-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
+                        <div className='academic-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
 
                             <div className='exp-title'>
 
@@ -70,8 +69,8 @@ function Volunteerings() {
                             </div>
 
 
-                            <div className='volunteering-exp-details' >
-                                <p className='volunteering-description'>{experience.description}</p>
+                            <div className='academic-exp-details' >
+                                <p className='academic-description'>{experience.description}</p>
                             </div>
                         </div>
                         : null}

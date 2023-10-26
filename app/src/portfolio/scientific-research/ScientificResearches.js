@@ -49,8 +49,9 @@ function ScientificResearches() {
                         </div>
                     </h3>
                     <p>{experience.duration}</p>
+                    
                     {hide[index] ?
-                        <div className='scientific-research-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
+                        <div className='academic-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
                             <div className='exp-title'>
                                 <Button
                                     type="primary"
@@ -65,8 +66,8 @@ function ScientificResearches() {
                             </div>
 
 
-                            <div className='scientific-research-exp-details' >
-                                <p className='scientific-research-description'>{experience.description}</p>
+                            <div className='academic-exp-details' >
+                                <p className='academic-description'>{experience.description}</p>
                             </div>
                         </div>
                         : null}
