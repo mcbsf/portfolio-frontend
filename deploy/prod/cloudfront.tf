@@ -8,6 +8,7 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
 }
 
 resource "aws_cloudfront_distribution" "cf_distribution" {
+    
     origin {
         domain_name = aws_s3_bucket.portfolio_react_bucket.bucket_regional_domain_name
         origin_id   = local.s3_origin_id
@@ -16,14 +17,25 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
             origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
         }
     }
-
+    aliases = [
+        "mariosoftware.solutions",
+    ]
+    http_version    = "http2and3"
     enabled         = true
     is_ipv6_enabled = true
 
     default_root_object = "index.html"
 
     default_cache_behavior {
-        allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+        allowed_methods  = [
+            "DELETE",
+            "GET",
+            "HEAD",
+            "OPTIONS",
+            "PATCH",
+            "POST",
+            "PUT"
+        ]
         cached_methods   = ["GET", "HEAD"]
         target_origin_id = local.s3_origin_id
 
@@ -44,7 +56,15 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
 
     ordered_cache_behavior {
         path_pattern     = "/index.html"
-        allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+        allowed_methods  = [
+            "DELETE",
+            "GET",
+            "HEAD",
+            "OPTIONS",
+            "PATCH",
+            "POST",
+            "PUT"
+        ]
         cached_methods   = ["GET", "HEAD", "OPTIONS"]
         target_origin_id = local.s3_origin_id
 
@@ -66,7 +86,10 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
     price_class = "PriceClass_100"
 
     viewer_certificate {
-        cloudfront_default_certificate = true
+        cloudfront_default_certificate = false
+        acm_certificate_arn = aws_acm_certificate.prod-cloudfront-cert.arn
+        minimum_protocol_version = "TLSv1.2_2021"
+        ssl_support_method       = "sni-only"
     }
 
     retain_on_delete = true
@@ -90,4 +113,6 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
         restriction_type = "none"
         }
     }
+
+
 }
