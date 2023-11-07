@@ -1,10 +1,10 @@
 
-resource "aws_s3_bucket" "portfolio_react_bucket" {
-    bucket = "portfolio-react-bucket"
+resource "aws_s3_bucket" "dev_portfolio_react_bucket" {
+    bucket = "dev-portfolio-react-bucket"
     acl    = "private"
 
     tags = {
-        Name = "portfolio-react-bucket"
+        Name = "dev-portfolio-react-bucket"
     }
 
     versioning {
@@ -22,8 +22,8 @@ resource "aws_s3_bucket" "portfolio_react_bucket" {
     }
 }
 
-resource "aws_s3_bucket_public_access_block" "block_public_access" {
-    bucket = aws_s3_bucket.portfolio_react_bucket.id
+resource "aws_s3_bucket_public_access_block" "dev_block_public_access" {
+    bucket = aws_s3_bucket.dev_portfolio_react_bucket.id
     block_public_acls       = true
     block_public_policy     = true
     ignore_public_acls      = true
