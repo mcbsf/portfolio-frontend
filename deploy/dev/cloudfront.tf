@@ -1,5 +1,5 @@
 locals {
-    s3_origin_id = "dev-S3-origin-react-app"
+    s3_origin_id = "S3-origin-react-app"
     expression = "${var.title != "" ? var.title : var.default}"
 }
 
