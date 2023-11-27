@@ -56,6 +56,8 @@ It is not mobile responsive yet. Also not responsive to aspect ratio 4:3.
 Here is the folder structure of this repository:
 
 ```
+.github/
+└── workflow/
 app/
 ├── public/
 ├── src/
@@ -78,6 +80,7 @@ deploy/
 ```
 The main folders and files in the repository are as follows:
 
+- **github/workflows:** This is CI/CD implementation.
 - **app/:** This is the root directory of the React application.
 - **public/:** This directory contains public files such as the favicon, index.html, logo images, and the robots.txt file.
 - **src/:** This directory contains the source code for the React components and other related files.
@@ -90,7 +93,7 @@ Please note that the actual files are excluded from this description for brevity
 
 ## Contribution
 
-I welcome contributions to enhance the functionality and features of this portfolio repository. If you have any suggestions, bug fixes, or improvements, feel free to open a pull request. Please ensure that your contributions align with the goals and style of this project.
+Please read the CONTRIBUTING.md for instructions
 
 ## License
 
