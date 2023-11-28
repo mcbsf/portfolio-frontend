@@ -38,6 +38,7 @@ To install and run the portfolio locally, follow these steps:
 This will start the development server and open the portfolio in your default browser at `http://localhost:3000`.
 
 
+
 ## Usage Guide
 
 Once you have the portfolio running locally, you can customize it with your own content and styling. Here are a few key files and directories to get started:
@@ -91,6 +92,11 @@ The main folders and files in the repository are as follows:
 
 Please note that the actual files are excluded from this description for brevity.
 
+## URLs
+
+Prod: https://mariosoftware.solutions
+Dev:  https://d19577ucgdn6i8.cloudfront.net
+ 
 ## Contribution
 
 Please read the CONTRIBUTING.md for instructions
