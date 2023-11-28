@@ -1,8 +1,13 @@
 export const ProjectsDataStructure = [
     {
-        title: 'Portfolio',
+        title: 'Portfolio Frontend',
         description: 'Project to create this web app.',
         githubUrl: 'https://www.github.com/mcbsf/portfolio-frontend',
+    },
+    {
+        title: 'Portfolio Q&A Bot',
+        description: 'Project to create the chatbot in this page',
+        githubUrl: 'https://www.github.com/mcbsf/portfolio-qa-bot',
     },
     {
         title: 'Redis Like',
@@ -18,11 +23,6 @@ export const ProjectsDataStructure = [
         title: 'Requirements Engineering',
         description: 'Project to document requirements engineering processes, offering AS IS/TO BE models for Strategic Dependency Model, Strategic Rationale Model and Business Process Model Notion.',
         githubUrl: 'https://github.com/LeonardoGaldino/iStarModels',
-    },
-    {
-        title: 'GameBot Farmer',
-        description: 'A personal project for simple purpose, collect resources in a game clicking on repeated places in specific sequences. The sequences can vary acording to user farm desires',
-        githubUrl: 'https://www.github.com/mcbsf/aow_auto_clicker',
     },
     {
         title: 'Crypto Analyser',
