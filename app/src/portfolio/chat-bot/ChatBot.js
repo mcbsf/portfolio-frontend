@@ -8,16 +8,14 @@ import { config } from '../../config';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { sendMessage } from '../../redux/actions'; // Assuming actions.js is in a './actions' directory
+import { sendMessage } from '../../redux/actions'; 
 
 function ChatBot() {
-    const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about Mario overall experiences, based on this website texts, with LLM technicques \n\nPS: I can eventually write some errors" }]
     const error_msg = { sender: 'Bot', message: "It appears that my servers are facing some issues. Can you refresh the page to try again and, if the error persist, try again after a while?" }
 
     const [loading, setLoading] = useState(false);
     const [visible, setVisible] = useState(false);
     const [message, setMessage] = useState('');
-    //const [chatHistory, setChatHistory] = useState(default_chat_msg);
 
     const chatHistory = useSelector((state) => state.task.chatHistory);
     const dispatch = useDispatch();
@@ -28,7 +26,6 @@ function ChatBot() {
     const closeChat = () => {
         setVisible(false);
         setMessage('');
-        //setChatHistory(default_chat_msg);
     };
 
     const handleSendMessage = () => {
@@ -48,8 +45,6 @@ function ChatBot() {
             try {
                 
                 if (!result.isError) {
-
-                    // Simulate a chatbot response for demonstration purposes
                     const botResponse = result.body;
                     dispatch(sendMessage({ sender: 'Bot', message: botResponse }));
                     setMessage('');
@@ -58,7 +53,6 @@ function ChatBot() {
                     throw result;
                 }
             } catch (error) {
-                // Simulate a chatbot response for demonstration purposes
                 dispatch(sendMessage(error_msg));
                 setMessage('');
                 setLoading(false)
