@@ -6,6 +6,10 @@ import postRequest from '../../postService';
 
 import { config } from '../../config';
 
+
+import { useDispatch, useSelector } from 'react-redux';
+import { sendMessage } from '../../redux/actions'; // Assuming actions.js is in a './actions' directory
+
 function ChatBot() {
     const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about Mario overall experiences, based on this website texts, with LLM technicques \n\nPS: I can eventually write some errors" }]
     const error_msg = { sender: 'Bot', message: "It appears that my servers are facing some issues. Can you refresh the page to try again and, if the error persist, try again after a while?" }
@@ -13,24 +17,26 @@ function ChatBot() {
     const [loading, setLoading] = useState(false);
     const [visible, setVisible] = useState(false);
     const [message, setMessage] = useState('');
-    const [chatHistory, setChatHistory] = useState(default_chat_msg);
+    //const [chatHistory, setChatHistory] = useState(default_chat_msg);
 
+    const chatHistory = useSelector((state) => state.task.chatHistory);
+    const dispatch = useDispatch();
 
     const openChat = () => {
         setVisible(true);
     };
-
     const closeChat = () => {
         setVisible(false);
         setMessage('');
-        setChatHistory(default_chat_msg);
+        //setChatHistory(default_chat_msg);
     };
 
     const handleSendMessage = () => {
+        
+
+        dispatch(sendMessage({ sender: 'User', message }));
         if (message.trim() === '') return;
         setLoading(true);
-        console.log(config);
-        console.log("post");
         postRequest(
             config.chatbot_url + '/get_answer',
             {
@@ -42,22 +48,18 @@ function ChatBot() {
             try {
                 
                 if (!result.isError) {
-                    const newChatHistory = [...chatHistory, { sender: 'User', message }];
+
                     // Simulate a chatbot response for demonstration purposes
                     const botResponse = result.body;
-                    newChatHistory.push({ sender: 'Bot', message: botResponse });
-                    setChatHistory(newChatHistory);
+                    dispatch(sendMessage({ sender: 'Bot', message: botResponse }));
                     setMessage('');
                     setLoading(false)
                 } else {
                     throw result;
                 }
             } catch (error) {
-                
-                const newChatHistory = [...chatHistory, { sender: 'User', message }];
                 // Simulate a chatbot response for demonstration purposes
-                newChatHistory.push(error_msg);
-                setChatHistory(newChatHistory);
+                dispatch(sendMessage(error_msg));
                 setMessage('');
                 setLoading(false)
             }
