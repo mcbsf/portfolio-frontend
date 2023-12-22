@@ -6,6 +6,11 @@ import postRequest from '../../postService';
 
 import { config } from '../../config';
 
+
+import { useDispatch, useSelector } from 'react-redux';
+import { sendMessage } from '../../redux/actions'; // Assuming actions.js is in a './actions' directory
+import store from "../../redux/store";
+
 function ChatBot() {
     const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about Mario overall experiences, based on this website texts, with LLM technicques \n\nPS: I can eventually write some errors" }]
     const error_msg = { sender: 'Bot', message: "It appears that my servers are facing some issues. Can you refresh the page to try again and, if the error persist, try again after a while?" }
@@ -15,11 +20,12 @@ function ChatBot() {
     const [message, setMessage] = useState('');
     const [chatHistory, setChatHistory] = useState(default_chat_msg);
 
+    const mainChatHistory = useSelector((state) => state.task.chatHistory);
+    const dispatch = useDispatch();
 
     const openChat = () => {
         setVisible(true);
     };
-
     const closeChat = () => {
         setVisible(false);
         setMessage('');
@@ -27,10 +33,12 @@ function ChatBot() {
     };
 
     const handleSendMessage = () => {
+        
+        console.log(mainChatHistory);
+        dispatch(sendMessage("TEST MESSAGE"));
+        console.log(sendMessage("Hello"));
         if (message.trim() === '') return;
         setLoading(true);
-        console.log(config);
-        console.log("post");
         postRequest(
             config.chatbot_url + '/get_answer',
             {
