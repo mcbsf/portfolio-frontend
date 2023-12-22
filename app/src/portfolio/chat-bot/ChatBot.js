@@ -9,7 +9,6 @@ import { config } from '../../config';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { sendMessage } from '../../redux/actions'; // Assuming actions.js is in a './actions' directory
-import store from "../../redux/store";
 
 function ChatBot() {
     const default_chat_msg = [{ sender: 'Bot', message: "Hello, my name is MarioBot! How can I help you? \n\nI can answer any question about Mario overall experiences, based on this website texts, with LLM technicques \n\nPS: I can eventually write some errors" }]
@@ -18,9 +17,9 @@ function ChatBot() {
     const [loading, setLoading] = useState(false);
     const [visible, setVisible] = useState(false);
     const [message, setMessage] = useState('');
-    const [chatHistory, setChatHistory] = useState(default_chat_msg);
+    //const [chatHistory, setChatHistory] = useState(default_chat_msg);
 
-    const mainChatHistory = useSelector((state) => state.task.chatHistory);
+    const chatHistory = useSelector((state) => state.task.chatHistory);
     const dispatch = useDispatch();
 
     const openChat = () => {
@@ -29,14 +28,13 @@ function ChatBot() {
     const closeChat = () => {
         setVisible(false);
         setMessage('');
-        setChatHistory(default_chat_msg);
+        //setChatHistory(default_chat_msg);
     };
 
     const handleSendMessage = () => {
         
-        console.log(mainChatHistory);
-        dispatch(sendMessage("TEST MESSAGE"));
-        console.log(sendMessage("Hello"));
+
+        dispatch(sendMessage({ sender: 'User', message }));
         if (message.trim() === '') return;
         setLoading(true);
         postRequest(
@@ -50,22 +48,18 @@ function ChatBot() {
             try {
                 
                 if (!result.isError) {
-                    const newChatHistory = [...chatHistory, { sender: 'User', message }];
+
                     // Simulate a chatbot response for demonstration purposes
                     const botResponse = result.body;
-                    newChatHistory.push({ sender: 'Bot', message: botResponse });
-                    setChatHistory(newChatHistory);
+                    dispatch(sendMessage({ sender: 'Bot', message: botResponse }));
                     setMessage('');
                     setLoading(false)
                 } else {
                     throw result;
                 }
             } catch (error) {
-                
-                const newChatHistory = [...chatHistory, { sender: 'User', message }];
                 // Simulate a chatbot response for demonstration purposes
-                newChatHistory.push(error_msg);
-                setChatHistory(newChatHistory);
+                dispatch(sendMessage(error_msg));
                 setMessage('');
                 setLoading(false)
             }
