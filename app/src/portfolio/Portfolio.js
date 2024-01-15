@@ -22,7 +22,10 @@ function Portfolio() {
                     <h1 className='hello'>It's me, Mario!</h1>
                     <div className='text'>
                         <p>
-                        Senior Software Engineer with a passion for leveraging my skills and experience to contribute to the growth and success of dynamic organizations. With 5+ years of experience in engineering, I bring a strong understanding of software development methodologies and best practices.
+                        Senior Software Engineer with a passion for building and maintaining complex web applications. I leverage my Software Engineering expertise to deliver high-quality and impactful projects, be it automating processes for massive growth (40% increase for a startup!) or building real-time auditing systems for one of the biggest banks in LATAM, BTG Pactual.
+                        </p>
+                        <p>
+                        I have over five years in Software Engineering processes, ten years of general experience in IT, and fifteen if we consider coding scripts for game hacking and VPN configuration as a teenager.
                         </p>
                     </div>
                     <div className='icons'>
