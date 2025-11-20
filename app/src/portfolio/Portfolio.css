@@ -1,152 +1,195 @@
-/* Portfolio.css */
-
+/* Main portfolio container */
 .portfolio {
+    width: 100%;
     margin: 0 auto;
-    padding: 0px 20px;
+    padding: 0;
+    position: relative;
+    background-color: #f5f5f5;
 }
 
+/* Bio container with overlap effect */
+.bio-container {
+    margin-top: -15%;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+}
 
-.overlay-content {
-    position: absolute;
-    z-index: 2;
-    width: 50%;
-    height: auto;
-    max-height: 50vh;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    top: 15%;
+/* Bio card styling */
+.bio-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: row;
-    background-color: #ffffff;
-    border-radius: 6px;
-    overflow: auto;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-}
-
-.icon {
-    margin: 10px 10px 10px 10px;
-}
-
-.icons {
-    position: relative;
-    bottom: auto; /* Position the icons at the bottom */
+    gap: 2rem;
+    max-width: 900px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.profile-photo {
-
-    
-    flex: 1;
-    flex-basis: 40%;
-    float: left;
-    display: flex;
-    justify-content: left;
+    padding: 2rem;
     align-items: center;
 }
 
-.profile-photo img {
+.bio-photo {
+    flex: 0 0 clamp(150px, 30%, 300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 12px;
+}
 
-    
+.bio-photo img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
+    display: block;
 }
 
-.profile-data {
+.bio-content {
     flex: 1;
-    flex-basis: 60%;
-    float: right;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(-15%);
-    margin-left:15%;
-    margin-right: 0%;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-.profile-data p{
-
-    justify-content: left;
-    text-align: left;
-}
-.hello {
-    font-size: 3.5vh;
+    min-width: 0;
 }
 
-
-.profile-data span {
-    white-space: pre-line;
+.bio-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    color: #333;
 }
 
+.bio-text {
+    margin-bottom: 1.5rem;
+}
 
+.bio-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0 0 1rem 0;
+}
+
+.bio-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Social icons navigation */
+.bio-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.bio-social svg {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.bio-social svg:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Portfolio sections */
 .portfolio-section {
-    margin-top: 2%;
-    margin-bottom: 40px;
+    margin: 4rem auto;
+    padding: 2rem 1rem;
+    max-width: 1200px;
     width: 100%;
 }
 
 .portfolio-section h2 {
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative;
+    margin-top: 0;
 }
 
-.portfolio-section h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 2px;
-    background-color: #007bff;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Responsive design */
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 0;
+    }
+
+    .bio-container {
+        margin-top: -20%;
+        margin-bottom: 2rem;
+        padding: 0 0.75rem;
+    }
+
+    .bio-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .bio-photo {
+        flex: 0 0 200px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    .bio-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .bio-content {
+        flex: 1;
+        width: 100%;
+    }
+
+    .bio-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .bio-text p {
+        font-size: 0.95rem;
+    }
+
+    .bio-social {
+        justify-content: center;
+    }
+
+    .portfolio-section {
+        margin: 3rem auto;
+        padding: 1.5rem 1rem;
+    }
 }
 
-.experiences{
-    position: absolute;
-    top: 65vh;
-    left:50%;
-    transform: translateX(-50%);
-    width: 100%;
-}
+@media (max-width: 480px) {
+    .bio-container {
+        margin-top: -25%;
+    }
 
-.icons{
-    margin-top: 50px !important;
-}
-    
-.icons .social-icon{
-    height: auto;
+    .bio-card {
+        padding: 1rem 0.75rem;
+        gap: 1rem;
+    }
 
-}
-.icons .social-svg{
-    height: auto !important;
-    width: auto !important;
-}
+    .bio-photo {
+        flex: 0 0 150px;
+        width: 150px;
+        height: 150px;
+    }
 
-.icons .social-container{
+    .bio-title {
+        font-size: 1.5rem;
+    }
 
-    top: -5px !important;
-}
+    .bio-text p {
+        font-size: 0.9rem;
+    }
 
-.help-btn{
-    position: fixed;
-    top: 85% !important;
-    left: 85%;
-    z-index: 998;
-    font-size: 18px !important;
-    height: 60px !important;
-    width: 180px !important;
+    .portfolio-section {
+        margin: 2rem auto;
+        padding: 1rem 0.75rem;
+    }
 }
 
 

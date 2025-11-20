@@ -1,38 +1,88 @@
 
-.header-like {
-    top: 0px;
-    background: linear-gradient(to right, #db2424,#9e1800,#004ddd, #0066ff);
-    padding: 0px;
-    border-radius: 10px;
-    height: 35vh;
-
-}
-
-.portfolio-header {
-    z-index: 10;
-    vertical-align: top;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: white;
-    padding-top:1%;
-    padding-bottom:1%;
-    margin:0px;
-    border-radius: 10px;
-    position: fixed;
-    top:0;
+/* Hero header that serves as initial background for bio card */
+.header-hero {
+    height: 40vh;
+    background: linear-gradient(to right, #db2424, #9e1800, #004ddd, #0066ff);
+    border-radius: 0;
     width: 100%;
-
-    background: linear-gradient(to right, #db2424,#9e1800,#004ddd, #0066ff);
 }
 
-.portfolio-header a {
+/* Main header/nav bar */
+.portfolio-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: linear-gradient(to right, #db2424, #9e1800, #004ddd, #0066ff);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.portfolio-header.expanded {
+    padding: 2rem 1rem;
+    height: auto;
+}
+
+.portfolio-header.collapsed {
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation menu */
+.portfolio-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.nav-list li {
+    flex: 0 1 auto;
+}
+
+.nav-list a {
     color: #ffffff;
     text-decoration: none;
-    margin-right: 20px;
-    transition: color 0.3s ease;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    display: inline-block;
+    padding: 0.5rem 1rem;
 }
 
-.portfolio-header a:hover {
-    color: #007bff;
+.nav-list a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-list li {
+        width: 100%;
+    }
+
+    .nav-list a {
+        display: block;
+        text-align: center;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .header-hero {
+        height: 30vh;
+    }
 }

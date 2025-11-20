@@ -1,28 +1,108 @@
-.projects {
-    margin-top:60px !important;
-    justify-content: space-around;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    width: 80% !important;
-    margin-left:10%;
+/* Projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
 }
 
-.ant-card{
-    display: relative !important;
-    top: 0% !important;
-    height: 210px !important;
-    width: 30% !important;
-    justify-content: center;
-    box-shadow: 1px 1px 3px rgba(15, 15, 15, 0.664) !important;
+/* Project card styling */
+.project-card {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease;
+    height: 100%;
 }
-.social-container{
+
+.project-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-4px);
+}
+
+.project-card .ant-card-head {
+    border-bottom: 2px solid #f0f0f0 !important;
+    padding: 1rem !important;
+}
+
+.project-card .ant-card-body {
+    padding: 1.5rem !important;
+}
+
+/* Card title with GitHub link */
+.card-title {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-top:5px;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    color: #333;
 }
-.projects svg{
-    height: 70% !important;
-    width: 70% !important;
+
+.card-github-link {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.card-github-link:hover {
+    transform: scale(1.1);
+}
+
+.card-github-link svg {
+    width: 28px !important;
+    height: 28px !important;
+}
+
+/* Card description */
+.card-description {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .project-card .ant-card-body {
+        padding: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-card .ant-card-head {
+        padding: 0.75rem !important;
+    }
+
+    .project-card .ant-card-body {
+        padding: 1rem !important;
+    }
+
+    .card-title {
+        font-size: 0.95rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
 }

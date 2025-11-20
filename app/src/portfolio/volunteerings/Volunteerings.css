@@ -1,7 +1,209 @@
-.experience .course{
-    font-weight: normal;
+/* Reuse experience section styles from ProfessionalExperiences */
+/* List item (collapsed view) */
+.experience-list-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-left: 4px solid #6200ea;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
 
-.location{
-    font-weight: normal;
+.experience-list-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.experience-info {
+    flex: 1;
+}
+
+.experience-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #333;
+}
+
+.position-label {
+    color: #666;
+    font-weight: 400;
+}
+
+.duration {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #999;
+}
+
+/* Expand button */
+.experience-expand-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.experience-expand-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.experience-expand-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Detail panel (expanded view) */
+.experience-detail-panel {
+    background: linear-gradient(135deg, #8e24aa 0%, #6200ea 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 2rem;
+    animation: slideUp 0.3s ease;
+    color: white;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Detail header with close button */
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-header h3 {
+    margin: 0;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: white;
+    flex: 1;
+}
+
+.detail-close-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.detail-close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Detail content */
+.detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.volunteering-description {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .experience-detail-panel {
+        padding: 1.5rem;
+    }
+
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .detail-close-btn {
+        align-self: flex-end;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-expand-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .volunteering-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-list-item {
+        padding: 1rem;
+    }
+
+    .experience-header {
+        gap: 0.75rem;
+    }
+
+    .experience-expand-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .experience-detail-panel {
+        padding: 1rem;
+    }
+
+    .detail-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .detail-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .volunteering-description {
+        font-size: 0.9rem;
+    }
 }

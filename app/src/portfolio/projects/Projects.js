@@ -1,7 +1,7 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 import './Projects.css';
-import { ProjectsDataStructure } from './ProjectsDataStructure'
+import { ProjectsDataStructure } from './ProjectsDataStructure';
 import { Card } from 'antd';
 
 function Projects() {
@@ -10,25 +10,37 @@ function Projects() {
     return (
         <div>
             <h2>Projects</h2>
-            <div className="projects">
+            <div className="projects-grid">
                 {projects.map((project, index) => (
-                        
-                        <Card 
-                            className='col-sm-6'
-                            title=<div>
-                                    {project.title} 
-                                    <SocialIcon className='icon' url={project.githubUrl} bgColor="black" fgColor="white" /> 
-                                </div>
-                            bordered={false} style={{ width: 300 }}>
-                            {project.description}
-                            
-                        </Card>//icons related, like robots, coins, etc
-
+                    <Card
+                        key={index}
+                        className="project-card"
+                        title={
+                            <div className="card-title">
+                                {project.title}
+                                <a
+                                    href={project.githubUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="card-github-link"
+                                    aria-label={`GitHub repository for ${project.title}`}
+                                >
+                                    <SocialIcon
+                                        url={project.githubUrl}
+                                        bgColor="black"
+                                        fgColor="white"
+                                    />
+                                </a>
+                            </div>
+                        }
+                        bordered={false}
+                    >
+                        <p className="card-description">{project.description}</p>
+                    </Card>
                 ))}
-
             </div>
         </div>
     );
-};
+}
 
 export default Projects;

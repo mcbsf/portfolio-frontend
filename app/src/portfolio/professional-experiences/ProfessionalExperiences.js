@@ -1,139 +1,105 @@
 import React, { useState, useRef } from 'react';
-import { Button, List } from 'antd';
+import { List } from 'antd';
 import './ProfessionalExperiences.css';
-import { ProfessionalExperiencesDataStructure } from './ProfessionalExperiencesDataStructure'
+import { ProfessionalExperiencesDataStructure } from './ProfessionalExperiencesDataStructure';
 import QuestionBtn from '../../assets/mario-question.png';
 
 function ProfessionalExperiences() {
     const professionalExperiences = ProfessionalExperiencesDataStructure;
-
-    const [hide, setHide] = useState(Array(professionalExperiences.length).fill(false));
-
+    const [expandedIndex, setExpandedIndex] = useState(null);
     const detailsRefs = useRef([]);
-    const expand = (index) => {
-        setHide((prevHide) => {
-            const updatedHide = [...prevHide];
-            updatedHide[index] = !updatedHide[index];
-            if (updatedHide[index]) {
-                scrollToDetails(index);
-            }
-            return updatedHide;
-        });
 
-    }
-    const scrollToDetails = (index) => {
-        setTimeout(() => {
-            const detailsRef = detailsRefs.current[index];
-            if (detailsRef) {
-                console.log(detailsRef)
-            }
-        }, 10);
+    const toggleExpand = (index) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
+        if (expandedIndex !== index) {
+            setTimeout(() => {
+                detailsRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
     };
+
+    const isAnyExpanded = expandedIndex !== null;
+
     return (
-        <div>
-            {hide.every(v => v === false) ?<h2>Professional Experience</h2>:null}
+        <div className="experience-section">
+            {!isAnyExpanded && <h2>Professional Experience</h2>}
+
             {professionalExperiences.map((experience, index) => (
-                
-                <div className="experience">
-                    {hide.every(v => v === false) ?
-                        
-                        <div>
-                            
-                    <h3>{experience.company} - &nbsp;<span className='description'>{experience.position} </span>
-                        <div 
-                            className='question-photo question-main'
-                            onClick={() => {
-                                expand(index);
-                            }}
-                        >
-                            <img src={QuestionBtn} alt="Some Title" />
-                        </div>
-                        
-                    </h3>
-                    <p>{experience.duration}</p>
-                    </div>:null}
-
-                    {hide[index] ?
-                        <div className='prof-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
-
-                            <div className='exp-title'>
-                                <span className='whitespace'>asd</span>
-
-                                <Button
-                                    type="primary"
-                                    danger
-                                    shape="circle"
-                                    size="middle"
-                                    className='collapse-btn'
-                                    onClick={() => expand(index)}
+                <div key={index} className="experience-item">
+                    {/* Collapsed view - list of experiences */}
+                    {!isAnyExpanded && (
+                        <article className="experience-list-item">
+                            <div className="experience-header">
+                                <div className="experience-info">
+                                    <h3>{experience.company} – <span className="position-label">{experience.position}</span></h3>
+                                    <p className="duration">{experience.duration}</p>
+                                </div>
+                                <button
+                                    className="experience-expand-btn"
+                                    onClick={() => toggleExpand(index)}
+                                    aria-label={`Expand ${experience.company} details`}
+                                    title="Click to see details"
                                 >
-                                    x
-                                </Button>
-                                <h3>{experience.company} - {experience.position}</h3>
+                                    <img src={QuestionBtn} alt="" />
+                                </button>
+                            </div>
+                        </article>
+                    )}
+
+                    {/* Expanded view - detail panel */}
+                    {expandedIndex === index && (
+                        <article
+                            className="experience-detail-panel"
+                            ref={(ref) => (detailsRefs.current[index] = ref)}
+                        >
+                            {/* Panel header */}
+                            <div className="detail-header">
+                                <h3>{experience.company} – {experience.position}</h3>
+                                <button
+                                    className="detail-close-btn"
+                                    onClick={() => toggleExpand(index)}
+                                    aria-label="Close details"
+                                    title="Close"
+                                >
+                                    ✕
+                                </button>
                             </div>
 
-
-                            <div className='professional-exp-details' >
-                                <div className='hardskills'>
+                            {/* Panel content - two columns */}
+                            <div className="detail-content">
+                                {/* Hard Skills column */}
+                                <div className="detail-column">
+                                    <h4 className="detail-section-header hardskills-header">Hard Skills</h4>
                                     <List
-                                        size='small'
-                                        header={
-                                            <h1>
-                                                <span className='hardskills-style'>HardSkills</span>
-                                            </h1>}
-                                        itemLayout="horizontal"
-                                        className='custom-experience-list'
                                         dataSource={experience.hardSkills}
-                                        renderItem={(hardskill, index) => (
-                                            <List.Item
-                                                className='exp-grid'
-                                            >
-                                                <List.Item.Meta
-
-                                                    title={<div className="hardskill-title">{hardskill.title}</div>}
-                                                    description={<div className="hardskill-description">{hardskill.description}</div>}
-                                                />
+                                        pagination={{ pageSize: 4, position: 'bottom', size: 'small' }}
+                                        renderItem={(skill) => (
+                                            <List.Item className="skill-item">
+                                                <div className="skill-content">
+                                                    <span className="skill-title">{skill.title}</span>
+                                                    <span className="skill-description">{skill.description}</span>
+                                                </div>
                                             </List.Item>
                                         )}
-                                        pagination={{
-                                            position: "bottom",
-                                            size: "small",
-                                            pageSize: 4,
-                                            align: "center"
-                                            
-                                        }}
                                     />
                                 </div>
-                                <div className='blank' />
-                                <div className='responsabilities'>
-                                    <List
-                                        size='small'
-                                        header={
-                                            <h1>
-                                                <span className='responsabilities-style'>Responsabilities</span>
-                                            </h1>}
-                                        itemLayout="horizontal"
-                                        className='custom-experience-list-responsabilities'
-                                        dataSource={experience.responsibilities}
-                                        renderItem={(responsability, index) => (
-                                            <List.Item
-                                                className='exp-grid'
-                                            >
-                                                <List.Item.Meta
 
-                                                    title={<div className="hardskill-title">{responsability}</div>}
-                                                />
-                                            </List.Item>
-                                        )}
-                                    />
+                                {/* Responsibilities column */}
+                                <div className="detail-column">
+                                    <h4 className="detail-section-header responsibilities-header">Responsibilities</h4>
+                                    <ul className="responsibilities-list">
+                                        {experience.responsibilities.map((resp, i) => (
+                                            <li key={i} className="responsibility-item">{resp}</li>
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                        : null}
+                        </article>
+                    )}
                 </div>
             ))}
         </div>
     );
-};
+}
 
 export default ProfessionalExperiences;

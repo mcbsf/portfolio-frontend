@@ -1,202 +1,329 @@
-
-.collapse-btn {
-    position: absolute;
-    margin-left: 90%;
-    margin-top:2%
+/* Experience section container */
+.experience-section {
+    width: 100%;
 }
 
-.prof-experience-box{
-
-    max-height: 50em !important;
-    height: 50em !important;
-
-    top:5%;
-    z-index: 10;
-    border-radius: 6px;
-    box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.295);
-    align-items: center;
-    border-radius: 10% !important;
-    width: 80%;
-    margin-left:10% !important;
+/* List item (collapsed view) */
+.experience-list-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-left: 4px solid #db2424;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
-.professional-exp-details {
 
-    overflow: hidden;
-    top: 0%;
-    left: 10%;
-    text-align: center;
-    align-items: center;
+.experience-list-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.experience-header {
     display: flex;
-    flex-direction: row;
-}
-.exp-title{
-    position: relative;
-    display: grid;
-    width: 100%;
-    text-align:left;
-
-}
-.whitespace{
-    color: transparent;
-}
-.exp-title  h3{
-    margin-top:3% !important;
-    display: inline-block;
-    width: 100%;
-    align-items: center !important;
-    font-size: 4vh;
-    margin-top: 2%;
-    
-
-}
-
-.hardskills {
-    margin-left: 150px;
-    width: 100%;
-    flex: 1;
-    flex-basis: 30%;
-    display: inline !important;
-    justify-content: top;
-    align-items: center;
-    
-    padding: 0px 0px 0px 0px;
-    left: -10%;
-
-    height: 100vh !important;
-    margin-top: -10vh !important;
-}
-
-.hardskill-title {
-
-    font-weight: bold;
-    font-size: 1.8vh;
-    margin-bottom: 0;
-
-}
-
-.hardskill-description {
-    display: inline-block;
-    margin-left: 10px;
-    color: rgb(83, 83, 83);
-    font-size: 1.7vh;
-}
-
-.blank {
-    display: fixed;
-    top: 20%;
-    width: 80%;
-    flex: 2;
-    flex-basis: 10%;
-    float: top;
-    justify-content: center;
-    align-items: top;
-    height: 100%;
-}
-
-.responsabilities {
-    /* Positioned the responsibilities element properly */
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    width: 80%;
-    flex: 3;
-    flex-basis: 50%;
-    float: top;
-    justify-content: center;
-    align-items: top;
-    height: 100vh !important;
-    margin-top: 10vh !important;
+    gap: 1rem;
 }
 
-.blurred {
-    filter: blur(5px);
-    /* Apply blur effect */
-}
-.custom-experience-list{
-
-    margin-top:20%;
-}
-.custom-experience-list .ant-list-item {
-    
-    position: relative;
-
+.experience-info {
+    flex: 1;
 }
 
-.custom-experience-list .ant-list-item::after {
-    content: '';
-    position: absolute;
-    
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #db2424,#9e1800);
-    /* Replace with your desired gradient colors */
+.experience-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #333;
 }
 
-
-.custom-experience-list-responsabilities{
-    top: 0%;
-    height: 100%;
-}
-.custom-experience-list-responsabilities .ant-list-item {
-    
-    position: relative;
-
+.position-label {
+    color: #666;
+    font-weight: 400;
 }
 
-.custom-experience-list-responsabilities .ant-list-item::after {
-    content: '';
-    position: absolute;
-    
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #004ddd, #0066ff);
-    /* Replace with your desired gradient colors */
+.duration {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #999;
 }
 
-.hardskills-style {
-
-    align-items: top;
-    
-    font-size: 4.5vh;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to right, #db2424,#b61b00,#dd1a00);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.ant-list-item .exp-grid{
-    margin-bottom: 0px !important;
-    padding: 0px 0px 0px 0px;
-
-}
-
-
-.responsabilities-style {
-
-    align-items: top;
-    
-    font-size: 4.5vh;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to right, #6000ddbe, #0066ff);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-
-.question-main {
-    margin-top:1% !important;
-    margin-left: 1.5% !important;
-    height: 6.2% !important;
-    width: 6.2% !important;
-    max-height: 6.2% !important;
-    max-width: 6.2% !important;
-    margin: 0px 0px 0px 0px ;
-    padding: 0px 0px 0px 0px ;
+/* Expand button */
+.experience-expand-btn {
+    background: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.experience-expand-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.experience-expand-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Detail panel (expanded view) */
+.experience-detail-panel {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 2rem;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Detail header with close button */
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.detail-header h3 {
+    margin: 0;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: #333;
+    flex: 1;
+}
+
+.detail-close-btn {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.detail-close-btn:hover {
+    background-color: #ff7875;
+    transform: scale(1.1);
+}
+
+/* Detail content - two columns */
+.detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.detail-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-section-header {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid;
+    display: inline-block;
+}
+
+.hardskills-header {
+    background: linear-gradient(to right, #db2424, #9e1800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom-color: #db2424;
+}
+
+.responsibilities-header {
+    background: linear-gradient(to right, #004ddd, #0066ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom-color: #004ddd;
+}
+
+/* Ant Design List customization */
+.ant-list-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0.75rem 0 !important;
+}
+
+.ant-list-item:last-child {
+    border-bottom: none;
+}
+
+.skill-item {
+    border: none;
+    padding: 0.75rem 0 !important;
+}
+
+.skill-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.25rem;
+}
+
+.skill-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.skill-description {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Responsibilities list */
+.responsibilities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.responsibility-item {
+    padding: 0.75rem 0 0.75rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.responsibility-item:last-child {
+    border-bottom: none;
+}
+
+.responsibility-item::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #004ddd;
+    font-weight: bold;
+}
+
+/* Pagination styling */
+.ant-pagination {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.ant-pagination-item-active {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.ant-pagination-item-active a {
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .experience-detail-panel {
+        padding: 1.5rem;
+    }
+
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .detail-close-btn {
+        align-self: flex-end;
+    }
+
+    .detail-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-expand-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .detail-section-header {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-list-item {
+        padding: 1rem;
+    }
+
+    .experience-header {
+        gap: 0.75rem;
+    }
+
+    .experience-expand-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .experience-detail-panel {
+        padding: 1rem;
+    }
+
+    .detail-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .detail-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .detail-content {
+        gap: 1rem;
+    }
+
+    .skill-title {
+        font-size: 0.9rem;
+    }
+
+    .skill-description {
+        font-size: 0.8rem;
+    }
+
+    .responsibility-item {
+        font-size: 0.9rem;
+        padding: 0.5rem 0 0.5rem 1.25rem;
+    }
 }

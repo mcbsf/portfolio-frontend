@@ -62,55 +62,66 @@ function ChatBot() {
 
     };
     return (
-        <div>
+        <div className="chatbot-container">
             <Button
                 type="primary"
                 shape="round"
                 size="large"
-                className='help-btn'
+                className="chatbot-trigger-btn"
                 onClick={openChat}
             >
                 Chatbot Help
             </Button>
 
             <Modal
-                title="Chatbot"
+                title="Ask Mario Anything"
                 open={visible}
-                onOk={closeChat}
                 onCancel={closeChat}
                 zIndex={999}
-                bodyStyle={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
+                width="clamp(300px, 90vw, 600px)"
                 className="chat-modal"
-                footer={
+                footer={null}
+                bodyStyle={{ padding: '1rem' }}
+            >
+                <div className="chat-history">
+                    <Spin spinning={loading}>
+                        <List
+                            dataSource={chatHistory}
+                            renderItem={(item) => (
+                                <div className="chat-message-wrapper">
+                                    <div
+                                        className={`chat-message ${item.sender === 'Bot' ? 'bot-message' : 'user-message'}`}
+                                    >
+                                        <p className="chat-content">{item.message}</p>
+                                    </div>
+                                </div>
+                            )}
+                        />
+                    </Spin>
+                </div>
+
+                {/* Message input footer */}
+                <div className="chat-input-footer">
                     <Input
-                        className='new-message'
+                        className="chat-input"
                         placeholder="Type your message..."
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         onPressEnter={handleSendMessage}
-                        addonAfter={<Button onClick={handleSendMessage} disabled={loading}>Send</Button>}
+                        maxLength={500}
                     />
-                }
-            >
-                <div className="chat-history">
-                <Spin spinning={loading}>
-                    <List
-                        dataSource={chatHistory}
-                        renderItem={(item) => (
-                            <div className='line'>
-                                <div
-                                    className={`chatMessage ${item.sender === 'Bot' ? 'botMessage' : 'userMessage'}`}
-                                >
-                                    <div className='chat-content'>{item.message}</div>
-                                </div>
-                            </div>
-                        )}
-                    />
-                </Spin>
+                    <Button
+                        className="chat-send-btn"
+                        onClick={handleSendMessage}
+                        disabled={loading || !message.trim()}
+                        type="primary"
+                    >
+                        Send
+                    </Button>
                 </div>
             </Modal>
         </div>
     );
-};
+}
 
 export default ChatBot;

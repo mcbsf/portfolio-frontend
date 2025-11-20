@@ -1,81 +1,81 @@
 import React, { useState, useRef } from 'react';
-import { Button } from 'antd';
 import './AcademicExperiences.css';
 import { AcademicExperiencesDataStructure } from './AcademicExperiencesDataStructure';
 import QuestionBtn from '../../assets/mario-question.png';
 
 function AcademicExperiences() {
     const academicExperiences = AcademicExperiencesDataStructure;
-
-    const [hide, setHide] = useState(Array(academicExperiences.length).fill(false));
-
+    const [expandedIndex, setExpandedIndex] = useState(null);
     const detailsRefs = useRef([]);
-    const expand = (index) => {
-        setHide((prevHide) => {
-            const updatedHide = [...prevHide];
-            updatedHide[index] = !updatedHide[index];
-            if (updatedHide[index]) {
-                scrollToDetails(index);
-            }
-            return updatedHide;
-        });
 
-    }
-    const scrollToDetails = (index) => {
-        setTimeout(() => {
-            const detailsRef = detailsRefs.current[index];
-            if (detailsRef) {
-                console.log(detailsRef)
-                //detailsRef.scrollIntoView({ behavior: 'smooth' });
-                
-            }
-        }, 10);
+    const toggleExpand = (index) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
+        if (expandedIndex !== index) {
+            setTimeout(() => {
+                detailsRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
     };
+
+    const isAnyExpanded = expandedIndex !== null;
+
     return (
-        <div>
-            <h2>Academic Experience</h2>
+        <div className="experience-section">
+            {!isAnyExpanded && <h2>Academic Experience</h2>}
+
             {academicExperiences.map((experience, index) => (
-
-                <div className="experience">
-                    <h3>{experience.course} -&nbsp; <span className='description'> {experience.school}</span>
-                    <div
-                            className='question-photo'
-                            onClick={() => {
-                                expand(index);
-                            }}
-                        >
-                            <img src={QuestionBtn} alt="Some Title" />
-                        </div>
-                    </h3>
-                    <p>{experience.duration}</p>
-
-                    {hide[index] ?
-                        <div className='academic-experience-box' ref={(ref) => (detailsRefs.current[index] = ref)}>
-
-                            <div className='exp-title'>
-
-                                <Button
-                                    type="primary"
-                                    danger
-                                    shape="circle"
-                                    size="middle"
-                                    className='collapse-btn'
-                                    onClick={() => expand(index)}
+                <div key={index} className="experience-item">
+                    {/* Collapsed view - list of experiences */}
+                    {!isAnyExpanded && (
+                        <article className="experience-list-item">
+                            <div className="experience-header">
+                                <div className="experience-info">
+                                    <h3>{experience.course} – <span className="position-label">{experience.school}</span></h3>
+                                    <p className="duration">{experience.duration}</p>
+                                </div>
+                                <button
+                                    className="experience-expand-btn"
+                                    onClick={() => toggleExpand(index)}
+                                    aria-label={`Expand ${experience.course} details`}
+                                    title="Click to see details"
                                 >
-                                    x
-                                </Button>
+                                    <img src={QuestionBtn} alt="" />
+                                </button>
+                            </div>
+                        </article>
+                    )}
+
+                    {/* Expanded view - detail panel */}
+                    {expandedIndex === index && (
+                        <article
+                            className="experience-detail-panel"
+                            ref={(ref) => (detailsRefs.current[index] = ref)}
+                        >
+                            {/* Panel header */}
+                            <div className="detail-header">
+                                <h3>{experience.course} – {experience.school}</h3>
+                                <button
+                                    className="detail-close-btn"
+                                    onClick={() => toggleExpand(index)}
+                                    aria-label="Close details"
+                                    title="Close"
+                                >
+                                    ✕
+                                </button>
                             </div>
 
-
-                            <div className='academic-exp-details' >
-                                <p className='academic-description'>{experience.description}</p>
+                            {/* Panel content */}
+                            <div className="detail-content">
+                                <div className="academic-description">
+                                    {experience.description}
+                                </div>
                             </div>
-                        </div>
-                        : null}
+                        </article>
+                    )}
                 </div>
             ))}
         </div>
     );
-};
+}
 
 export default AcademicExperiences;
