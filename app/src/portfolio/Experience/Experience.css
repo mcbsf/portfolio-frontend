@@ -1,6 +1,8 @@
 /* Experience section container */
 .experience-section {
-    width: 80%;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .experience-section h2 {
