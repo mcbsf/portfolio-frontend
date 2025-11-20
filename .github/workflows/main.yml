@@ -5,30 +5,41 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read      # allow checkout
+  id-token: write     # REQUIRED for OIDC → AssumeRoleWithWebIdentity
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 18   
 
       - name: Install dependencies
         run: npm install --prefix app
 
       - name: Build the app
         run: npm run build --prefix app
-        
-      - name: Configure AWS credentials
-        run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::839287955684:role/github-actions-portfolio-deploy
+          aws-region: us-east-1
 
       - name: Upload to S3
         run: |
-          aws --region 'us-east-1' s3 cp --recursive ./app/build/ s3://portfolio-react-bucket/
+          aws s3 sync ./app/build/ s3://portfolio-react-bucket/ --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E3M6KI0QUL3A4X \
+            --paths "/*"
