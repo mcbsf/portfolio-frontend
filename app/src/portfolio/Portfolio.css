@@ -3,14 +3,15 @@
     width: 100%;
     margin: 0 auto;
     padding: 0;
+    padding-top: 80px;
     position: relative;
     background-color: #f5f5f5;
 }
 
 /* Bio container with overlap effect */
 .bio-container {
-    margin-top: -15%;
-    margin-bottom: 3rem;
+    margin-top: -30vh;
+    margin-bottom: 2rem;
     position: relative;
     z-index: 10;
     padding: 0 1rem;
@@ -25,15 +26,15 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 900px;
     width: 100%;
-    padding: 2rem;
+    padding: 1.5rem;
     align-items: center;
 }
 
 .bio-photo {
-    flex: 0 0 clamp(150px, 30%, 300px);
+    flex: 0 0 clamp(120px, 25%, 200px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,20 +56,21 @@
 
 .bio-title {
     margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-size: clamp(1.75rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     color: #333;
+    text-align: center;
 }
 
 .bio-text {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .bio-text p {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.6;
     color: #666;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
 }
 
 .bio-text p:last-child {
@@ -79,7 +81,7 @@
 .bio-social {
     display: flex;
     gap: 1rem;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -96,7 +98,7 @@
 
 /* Portfolio sections */
 .portfolio-section {
-    margin: 4rem auto;
+    margin: 2rem auto;
     padding: 2rem 1rem;
     max-width: 1200px;
     width: 100%;
@@ -110,19 +112,20 @@
 @media (max-width: 768px) {
     .portfolio {
         padding: 0;
+        padding-top: 60px;
     }
 
     .bio-container {
-        margin-top: -20%;
-        margin-bottom: 2rem;
+        margin-top: -25vh;
+        margin-bottom: 1.5rem;
         padding: 0 0.75rem;
     }
 
     .bio-card {
         flex-direction: column;
         text-align: center;
-        gap: 1.5rem;
-        padding: 1.5rem 1rem;
+        gap: 1rem;
+        padding: 1.25rem 1rem;
     }
 
     .bio-photo {
@@ -164,12 +167,12 @@
 
 @media (max-width: 480px) {
     .bio-container {
-        margin-top: -25%;
+        margin-top: -20vh;
     }
 
     .bio-card {
         padding: 1rem 0.75rem;
-        gap: 1rem;
+        gap: 0.75rem;
     }
 
     .bio-photo {

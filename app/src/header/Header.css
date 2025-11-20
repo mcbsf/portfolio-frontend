@@ -1,10 +1,12 @@
 
 /* Hero header that serves as initial background for bio card */
 .header-hero {
-    height: 40vh;
+    height: 50vh;
     background: linear-gradient(to right, #db2424, #9e1800, #004ddd, #0066ff);
     border-radius: 0;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 /* Main header/nav bar */
@@ -13,7 +15,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 1000;
     background: linear-gradient(to right, #db2424, #9e1800, #004ddd, #0066ff);
     transition: all 0.3s ease;
     width: 100%;
@@ -83,6 +85,6 @@
     }
 
     .header-hero {
-        height: 30vh;
+        height: 40vh;
     }
 }

@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+.experience-section h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1.5rem;
+}
+
 /* List item (collapsed view) */
 .experience-list-item {
     background-color: #ffffff;
@@ -31,8 +36,8 @@
 }
 
 .experience-info h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin: 0 0  0.5rem 0;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
     color: #333;
 }
 
@@ -80,9 +85,12 @@
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    padding: 2.5rem;
+    padding: 1.5rem;
     animation: slideUp 0.3s ease;
     border: 1px solid #f0f0f0;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    margin-top: 1rem;
 }
 
 @keyframes slideUp {
@@ -101,14 +109,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
     border-bottom: 2px solid #e0e0e0;
 }
 
 .detail-header h3 {
     margin: 0;
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
     color: #1a1a1a;
     flex: 1;
     font-weight: 700;
@@ -146,7 +154,7 @@
 .headers-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     margin-bottom: 0;
 }
 
@@ -154,7 +162,7 @@
 .tables-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     align-items: start;
 }
 
@@ -179,10 +187,10 @@
 }
 
 .detail-section-header {
-    margin: 0 0 1.5rem 0;
-    font-size: 1.3rem;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
     font-weight: 700;
-    padding: 1rem;
+    padding: 0.75rem;
     border-radius: 8px;
     display: block;
     color: white;
@@ -224,9 +232,9 @@
 .skill-title-cell {
     font-weight: 700;
     color: #1a1a1a;
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: 0.3px;
-    padding: 1rem;
+    padding: 0.75rem;
     background-color: #fafafa;
     border-radius: 6px 0 0 6px;
     border: 1px solid #f0f0f0;
@@ -237,8 +245,8 @@
 
 .skill-description-cell {
     color: #444;
-    font-size: 0.9rem;
-    padding: 1rem;
+    font-size: 0.85rem;
+    padding: 0.75rem;
     background-color: #fafafa;
     border-radius: 0 6px 6px 0;
     border: 1px solid #f0f0f0;
@@ -291,13 +299,13 @@
 }
 
 .responsibility-cell {
-    padding: 1rem;
-    padding-left: 2.5rem;
+    padding: 0.75rem;
+    padding-left: 2.25rem;
     background-color: #fafafa;
     border-radius: 6px;
     color: #1a1a1a;
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.85rem;
+    line-height: 1.6;
     position: relative;
     border: 1px solid #f0f0f0;
     text-align: left;
