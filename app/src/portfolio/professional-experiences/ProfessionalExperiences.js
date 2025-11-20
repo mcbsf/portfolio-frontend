@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { List } from 'antd';
 import './ProfessionalExperiences.css';
 import { ProfessionalExperiencesDataStructure } from './ProfessionalExperiencesDataStructure';
 import QuestionBtn from '../../assets/mario-question.png';
@@ -65,33 +64,42 @@ function ProfessionalExperiences() {
                                 </button>
                             </div>
 
-                            {/* Panel content - two columns */}
+                            {/* Panel content - two columns with aligned headers */}
                             <div className="detail-content">
-                                {/* Hard Skills column */}
-                                <div className="detail-column">
+                                {/* Headers row */}
+                                <div className="headers-row">
                                     <h4 className="detail-section-header hardskills-header">Hard Skills</h4>
-                                    <List
-                                        dataSource={experience.hardSkills}
-                                        pagination={{ pageSize: 4, position: 'bottom', size: 'small' }}
-                                        renderItem={(skill) => (
-                                            <List.Item className="skill-item">
-                                                <div className="skill-content">
-                                                    <span className="skill-title">{skill.title}</span>
-                                                    <span className="skill-description">{skill.description}</span>
-                                                </div>
-                                            </List.Item>
-                                        )}
-                                    />
-                                </div>
-
-                                {/* Responsibilities column */}
-                                <div className="detail-column">
                                     <h4 className="detail-section-header responsibilities-header">Responsibilities</h4>
-                                    <ul className="responsibilities-list">
-                                        {experience.responsibilities.map((resp, i) => (
-                                            <li key={i} className="responsibility-item">{resp}</li>
-                                        ))}
-                                    </ul>
+                                </div>
+                                
+                                {/* Tables row */}
+                                <div className="tables-row">
+                                    {/* Hard Skills table - left column */}
+                                    <div className="table-column">
+                                        <table className="skills-table">
+                                            <tbody>
+                                                {experience.hardSkills.map((skill, i) => (
+                                                    <tr key={i} className="skill-row">
+                                                        <td className="skill-title-cell">{skill.title}</td>
+                                                        <td className="skill-description-cell">{skill.description}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    {/* Responsibilities table - right column */}
+                                    <div className="table-column">
+                                        <table className="responsibilities-table">
+                                            <tbody>
+                                                {experience.responsibilities.map((resp, i) => (
+                                                    <tr key={i} className="responsibility-row">
+                                                        <td className="responsibility-cell">{resp}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </article>
