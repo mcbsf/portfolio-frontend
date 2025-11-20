@@ -1,7 +1,7 @@
 
 /* Hero header that serves as initial background for bio card */
 .header-hero {
-    height: 45vh;
+    height: 35vh;
     background: linear-gradient(to right, #db2424, #9e1800, #004ddd, #0066ff);
     border-radius: 0;
     width: 100%;
@@ -22,7 +22,7 @@
 }
 
 .portfolio-header.expanded {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     height: auto;
 }
 
