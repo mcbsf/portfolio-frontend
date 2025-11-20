@@ -1,9 +1,10 @@
 /* Chatbot container and trigger button */
 .chatbot-container {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 2.5rem;
+    right: 2.5rem;
     z-index: 99;
+    
 }
 
 .chatbot-trigger-btn {
@@ -12,6 +13,9 @@
     font-weight: 600 !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
+    font-size: 1.3rem !important;
+    padding: 1rem 1.75rem !important;
+    height: auto !important;
 }
 
 .chatbot-trigger-btn:hover {
@@ -24,6 +28,11 @@
 }
 
 /* Chat modal styling */
+.chat-modal {
+    top: 8vw!important;
+    padding-bottom: 0 !important;
+}
+
 .chat-modal .ant-modal-content {
     border-radius: 8px;
 }
@@ -117,7 +126,8 @@
 }
 
 .chat-send-btn:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
+    color: #c4a5be !important;
 }
 
 /* Responsive design */
