@@ -27,7 +27,7 @@ function Experience({
                             <p className="expandable-duration">{durationText}</p>
                         </div>
                         <button
-                            className="expandable-expand-btn"
+                            className={`expandable-expand-btn ${classPrefix}-expand-btn`}
                             onClick={() => onToggleExpand(index)}
                             aria-label={`Expand ${titleContent} details`}
                             title="Click to see details"

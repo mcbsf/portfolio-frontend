@@ -1,4 +1,8 @@
-/* Reuse experience section styles from Experience component */
+/* Academic expand button - keep normal gap */
+#academic-experience .expandable-header {
+    gap: 2rem;
+}
+
 /* Detail panel (expanded view) */
 .academic-detail-panel {
     background: linear-gradient(135deg, #a724db 0%, #3181f8 100%);

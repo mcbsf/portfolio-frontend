@@ -1,7 +1,7 @@
 /* Experience section container */
 .experience-section {
     width: 70%;
-    margin: 0 auto;
+    margin: 0 auto 0 auto;
     padding: 0 1rem;
 }
 
@@ -15,8 +15,7 @@
     background-color: transparent;
     border-radius: 0;
     border-left: none;
-    padding: 1.5rem 0;
-    margin-bottom: 1.5rem;
+    padding: 1rem 0;
     box-shadow: none;
     transition: all 0.3s ease;
 }
@@ -29,11 +28,10 @@
 /* Header - common styles */
 .expandable-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
+    justify-content: left;
+    gap: 1rem;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 0 0 0;
 }
 
 /* Info section - common styles */
@@ -44,7 +42,7 @@
 }
 
 .expandable-info h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0 0;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: #333;
     white-space: nowrap;
@@ -58,7 +56,7 @@
 
 /* Duration - common styles */
 .expandable-duration {
-    margin: 0;
+    margin: 0 0 0 0;
     font-size: 0.95rem;
     color: #999;
 }
@@ -73,8 +71,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 8px;
     transition: all 0.3s ease;
 }

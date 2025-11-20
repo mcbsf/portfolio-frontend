@@ -1,9 +1,10 @@
-/* Experience section container */
-.experience-section {
-    width: 80%;
-    margin-left: 10%;
-}
-
+/* Professional expand button - closer to title */
+/* Use section ID to ensure this only affects professional experiences */
+#professional-experience .expandable-header {
+    
+    margin-right: 7vw;
+    margin-left: 7vw;
+}   
 /* Detail panel (expanded view) */
 .professional-detail-panel {
     background-color: #ffffff;
