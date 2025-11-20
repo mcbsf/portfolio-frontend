@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import './ProfessionalExperiences.css';
+import '../Experience/Experience.css';
 import { ProfessionalExperiencesDataStructure } from './ProfessionalExperiencesDataStructure';
-import QuestionBtn from '../../assets/mario-question.png';
+import Experience from '../Experience/Experience';
 
 function ProfessionalExperiences() {
     const professionalExperiences = ProfessionalExperiencesDataStructure;
@@ -32,38 +33,24 @@ function ProfessionalExperiences() {
             {!isAnyExpanded && <h2>Professional Experience</h2>}
 
             {professionalExperiences.map((experience, index) => (
-                <div key={index} className="experience-item">
-                    {/* Collapsed view - list of experiences */}
-                    {!isAnyExpanded && (
-                        <article className="experience-list-item">
-                            <div className="experience-header">
-                                <div className="experience-info">
-                                    <h3>{experience.company} – <span className="position-label">{experience.position}</span></h3>
-                                    <p className="duration">{experience.duration}</p>
-                                </div>
-                                <button
-                                    className="experience-expand-btn"
-                                    onClick={() => toggleExpand(index)}
-                                    aria-label={`Expand ${experience.company} details`}
-                                    title="Click to see details"
-                                >
-                                    <img src={QuestionBtn} alt="" />
-                                </button>
-                            </div>
-                        </article>
-                    )}
-
-                    {/* Expanded view - detail panel */}
-                    {expandedIndex === index && (
-                        <article
-                            className="experience-detail-panel"
-                            ref={(ref) => (detailsRefs.current[index] = ref)}
-                        >
+                <Experience
+                    key={index}
+                    index={index}
+                    experience={experience}
+                    isExpanded={expandedIndex === index}
+                    onToggleExpand={toggleExpand}
+                    detailRef={(ref) => (detailsRefs.current[index] = ref)}
+                    classPrefix="professional"
+                    titleContent={experience.company}
+                    subtitleContent={experience.position}
+                    durationText={experience.duration}
+                    expandedContent={
+                        <div>
                             {/* Panel header */}
-                            <div className="detail-header">
+                            <div className="professional-detail-header">
                                 <h3>{experience.company} – {experience.position}</h3>
                                 <button
-                                    className="detail-close-btn"
+                                    className="professional-detail-close-btn"
                                     onClick={() => toggleExpand(index)}
                                     aria-label="Close details"
                                     title="Close"
@@ -73,7 +60,7 @@ function ProfessionalExperiences() {
                             </div>
 
                             {/* Panel content - two columns with aligned headers */}
-                            <div className="detail-content">
+                            <div className="professional-detail-content">
                                 {/* Headers row */}
                                 <div className="headers-row">
                                     <h4 className="detail-section-header hardskills-header">Hard Skills</h4>
@@ -145,9 +132,9 @@ function ProfessionalExperiences() {
                                     </div>
                                 </div>
                             </div>
-                        </article>
-                    )}
-                </div>
+                        </div>
+                    }
+                />
             ))}
         </div>
     );
