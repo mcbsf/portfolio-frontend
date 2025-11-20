@@ -12,7 +12,7 @@ function AcademicExperiences() {
         setExpandedIndex(expandedIndex === index ? null : index);
         if (expandedIndex !== index) {
             setTimeout(() => {
-                detailsRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                detailsRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 50);
         }
     };

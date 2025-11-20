@@ -16,7 +16,7 @@
     padding: 1.5rem;
     margin-bottom: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .experience-list-item:hover {
@@ -26,13 +26,13 @@
 
 .experience-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     gap: 1rem;
 }
 
 .experience-info {
-    flex: 1;
+    flex: 0 0 auto;
+    max-width: 50%;
+    margin-left: 25%;
 }
 
 .experience-info h3 {
@@ -62,11 +62,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 8px;
     transition: all 0.3s ease;
+    margin-right: 30%;
 }
+
 
 .experience-expand-btn:hover {
     background-color: #f0f0f0;
@@ -86,17 +88,16 @@
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     padding: 1.5rem;
-    animation: slideUp 0.3s ease;
+    animation: slideDown 0.3s ease;
     border: 1px solid #f0f0f0;
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    overflow: visible;
 }
 
-@keyframes slideUp {
+@keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
@@ -170,12 +171,66 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 1rem;
 }
 
 .detail-column {
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+/* Pagination controls */
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    height: 52px;
+}
+
+.pagination-btn {
+    background-color: #db2424;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #ff4d4f;
+    transform: scale(1.05);
+}
+
+.pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.pagination-info {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    min-width: 60px;
+    text-align: center;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 2px solid #db2424;
 }
 
 .left-column {
@@ -223,6 +278,7 @@
     border-collapse: separate;
     border-spacing: 0 0.5rem;
     text-align: left;
+    min-height: 350px;
 }
 
 .skill-row {
@@ -292,6 +348,7 @@
     border-collapse: separate;
     border-spacing: 0 0.5rem;
     text-align: left;
+    min-height: 350px;
 }
 
 .responsibility-row {
@@ -399,13 +456,15 @@
     }
 
     .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
     }
 
     .experience-expand-btn {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
     }
 
     .detail-section-header {
