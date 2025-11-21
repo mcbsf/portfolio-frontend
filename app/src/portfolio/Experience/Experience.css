@@ -28,7 +28,8 @@
 /* Header - common styles */
 .expandable-header {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 1rem;
     max-width: 900px;
     margin: 0 0 0 0;
@@ -39,13 +40,18 @@
     flex: 1;
     min-width: 0;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
 .expandable-info h3 {
     margin: 0 0 0 0;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: #333;
-    white-space: nowrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
 }
 
 /* Labels - common styles */

@@ -22,7 +22,10 @@ function Experience({
                     <div className="expandable-header">
                         <div className="expandable-info">
                             <h3>
-                                {titleContent} – <span className="expandable-position-label">{subtitleContent}</span>
+                                {titleContent} 
+                                {classPrefix === 'academic' && <br />}
+                                {classPrefix === 'professional' && ' – '}
+                                <span className="expandable-position-label">{subtitleContent}</span>
                             </h3>
                             <p className="expandable-duration">{durationText}</p>
                         </div>
