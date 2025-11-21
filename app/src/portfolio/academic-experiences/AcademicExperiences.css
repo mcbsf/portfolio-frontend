@@ -141,7 +141,7 @@
     }
 }
 
-/* Show More button container and styling */
+* Show More button container and styling */
 .show-more-container {
     display: flex;
     justify-content: center;
@@ -149,7 +149,7 @@
 }
 
 .show-more-btn {
-    background: linear-gradient(135deg, #a724db 0%, #3181f8 100%);
+    background: linear-gradient(to right,#9e1800, #004ddd);
     color: white;
     border: none;
     padding: 0.75rem 2.5rem;
@@ -158,16 +158,16 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(167, 36, 219, 0.3);
+    box-shadow: 0 4px 12px rgba(219, 36, 36, 0.3);
 }
 
 .show-more-btn:hover {
-    background: linear-gradient(135deg, #c547f0 0%, #5b9bf0 100%);
-    box-shadow: 0 6px 16px rgba(167, 36, 219, 0.4);
+    background: linear-gradient(to right, #b82a00, #1a5fff);
+    box-shadow: 0 6px 16px rgba(219, 36, 36, 0.4);
     transform: translateY(-2px);
 }
 
 .show-more-btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(167, 36, 219, 0.3);
+    box-shadow: 0 2px 8px rgba(219, 36, 36, 0.3);
 }
