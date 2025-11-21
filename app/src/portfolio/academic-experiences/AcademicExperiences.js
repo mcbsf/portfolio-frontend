@@ -7,6 +7,7 @@ import Experience from '../Experience/Experience';
 function AcademicExperiences() {
     const academicExperiences = AcademicExperiencesDataStructure;
     const [expandedIndex, setExpandedIndex] = useState(null);
+    const [visibleCount, setVisibleCount] = useState(3);
     const detailsRefs = useRef([]);
 
     const toggleExpand = (index) => {
@@ -20,11 +21,15 @@ function AcademicExperiences() {
 
     const isAnyExpanded = expandedIndex !== null;
 
+    const handleShowMore = () => {
+        setVisibleCount(visibleCount + 3);
+    };
+
     return (
         <div className="experience-section">
             {!isAnyExpanded && <h2>Academic Experience</h2>}
 
-            {academicExperiences.map((experience, index) => (
+            {academicExperiences.slice(0, visibleCount).map((experience, index) => (
                 <Experience
                     key={index}
                     index={index}
@@ -61,6 +66,18 @@ function AcademicExperiences() {
                     }
                 />
             ))}
+
+            {visibleCount < academicExperiences.length && (
+                <div className="show-more-container">
+                    <button 
+                        className="show-more-btn" 
+                        onClick={handleShowMore}
+                        aria-label="Show more academic experiences"
+                    >
+                        Show More
+                    </button>
+                </div>
+            )}
         </div>
     );
 }

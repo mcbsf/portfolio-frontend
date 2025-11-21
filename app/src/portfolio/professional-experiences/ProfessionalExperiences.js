@@ -8,9 +8,11 @@ function ProfessionalExperiences() {
     const professionalExperiences = ProfessionalExperiencesDataStructure;
     const [expandedIndex, setExpandedIndex] = useState(null);
     const [currentPage, setCurrentPage] = useState({});
+    const [visibleCount, setVisibleCount] = useState(3);
     const detailsRefs = useRef([]);
     
     const ITEMS_PER_PAGE = 5;
+    const ITEMS_TO_SHOW_PER_CLICK = 3;
 
     const toggleExpand = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
@@ -28,11 +30,15 @@ function ProfessionalExperiences() {
 
     const isAnyExpanded = expandedIndex !== null;
 
+    const handleShowMore = () => {
+        setVisibleCount(visibleCount + ITEMS_TO_SHOW_PER_CLICK);
+    };
+
     return (
         <div className="experience-section">
             {!isAnyExpanded && <h2>Professional Experience</h2>}
 
-            {professionalExperiences.map((experience, index) => (
+            {professionalExperiences.slice(0, visibleCount).map((experience, index) => (
                 <Experience
                     key={index}
                     index={index}
@@ -136,6 +142,18 @@ function ProfessionalExperiences() {
                     }
                 />
             ))}
+
+            {visibleCount < professionalExperiences.length && (
+                <div className="show-more-container">
+                    <button 
+                        className="show-more-btn" 
+                        onClick={handleShowMore}
+                        aria-label="Show more professional experiences"
+                    >
+                        Show More
+                    </button>
+                </div>
+            )}
         </div>
     );
 }
